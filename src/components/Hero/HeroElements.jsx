@@ -34,7 +34,9 @@ export const ShapeYellow = () => {
 
 export const Person = () => {
   return (
-    <img className="absolute z-10 h-person w-person bottom-0 right-0 md:right-48 sm:right-36 lg:w-lg-person lg:h-lg-person object-cover lg:right-auto lg:left-60" src={person} alt="person" />
+    <div className="absolute w-full h-full overflow-hidden">
+      <img className="absolute z-10 h-person w-person bottom-0 right-0 md:right-48 sm:right-36 lg:w-lg-person lg:h-lg-person object-cover lg:right-auto lg:left-60" src={person} alt="person" />
+    </div>
   )
 }
 

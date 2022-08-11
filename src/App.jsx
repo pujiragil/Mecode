@@ -9,7 +9,7 @@ function App() {
           <Navbar />
           <HeroText />
         </div>
-        <div className="relative flex justify-center items-center w-full lg:w-hero h-hero bg-black overflow-hidden lg:overflow-visible">
+        <div className="relative flex justify-center items-center w-full lg:w-hero h-hero bg-black">
           <HeroImage/>
         </div>
       </div>

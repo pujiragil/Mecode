@@ -26,18 +26,20 @@ export const HeroButton = () => {
 
 export const ShapeYellow = () => {
   return (
-    <img className="absolute flex justify-center w-full h-full left-9 lg:w-lg-yellow lg:h-lg-yellow lg:left-[73]" src={yellow} alt="shape" />
+    <div className="relative w-full h-full overflow-hidden">
+      <img className="absolute flex justify-center w-96 h-full left-9 lg:w-lg-yellow lg:h-lg-yellow lg:left-[73]" src={yellow} alt="shape" />
+    </div>
   )
 }
 
 export const Person = () => {
   return (
-    <img className="absolute z-10 h-person w-person bottom-0 right-6 md:right-48 sm:right-36 lg:w-lg-person lg:h-lg-person object-cover lg:right-auto lg:left-60" src={person} alt="person" />
+    <img className="absolute z-10 h-person w-person bottom-0 right-0 md:right-48 sm:right-36 lg:w-lg-person lg:h-lg-person object-cover lg:right-auto lg:left-60" src={person} alt="person" />
   )
 }
 
 export const Code = () => {
   return (
-    <img className="absolute h-code lg:h-lg-code md:h-80 sm:h-60 w-person lg:w-lg-code md:w-3/4 sm:w-3/5 object-cover md:bottom-10 lg:-left-40 md:-left-4 -left-2 bottom-24" src={code} alt="code" />
+    <img className="absolute h-code lg:h-lg-code md:h-80 sm:h-60 w-80 lg:w-lg-code md:w-3/4 sm:w-3/5 object-cover md:bottom-10 lg:-left-40 md:-left-4 -left-2 bottom-24" src={code} alt="code" />
   )
 }

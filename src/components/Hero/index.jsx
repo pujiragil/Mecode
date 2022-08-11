@@ -1,0 +1,23 @@
+import line from '../../assets/line.svg'
+import { HeroButton, HeroParagraph, HeroTitle, Person, ShapeYellow, Code } from "./HeroElements"
+
+export const HeroText = () => {
+  return (
+    <div>
+      <HeroTitle/>
+      <img className="mb-px" src={line} alt="line" />
+      <HeroParagraph/>
+      <HeroButton/>
+    </div>
+  )
+}
+
+export const HeroImage = () => {
+  return (
+    <>
+      <ShapeYellow/>
+      <Person/>
+      <Code/>
+    </>
+  )
+}

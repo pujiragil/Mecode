@@ -4,7 +4,7 @@ export const Logo = () => {
   return (
     <div className="flex gap-x-2.5 justify-center items-center">
       <img src={icon} alt="Macode" />
-      <h1 className="text-xl font-bold text-black">mecode.</h1>
+      <h1 className="text-xl font-bold text-black lg:hidden">mecode.</h1>
     </div>
   )
 }
@@ -21,9 +21,9 @@ export const Toggle = () => {
 export const NavMenu = () => {
   return (
     <div className="hidden lg:flex justify-center items-center gap-x-8">
-      <a href="#">Tutorials</a>
-      <a href="#">Case Studies</a>
-      <a href="#">Resources</a>
+      <a className="block" href="#">Tutorials</a>
+      <a className="block" href="#">Case Studies</a>
+      <a className="block" href="#">Resources</a>
     </div>
   )
 }

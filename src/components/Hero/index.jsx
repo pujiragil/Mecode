@@ -5,7 +5,7 @@ export const HeroText = () => {
   return (
     <div>
       <HeroTitle/>
-      <img className="mb-px" src={line} alt="line" />
+      <img className="mb-px lg:mb-4" src={line} alt="line" />
       <HeroParagraph/>
       <HeroButton/>
     </div>

@@ -6,13 +6,13 @@ import { BsArrowUpRight } from 'react-icons/bs'
 
 export const HeroTitle = () => {
   return (
-    <h1 className="text-4xl font-normal w-3/4 leading-title mb-7">Improve your skills by <BiCodeAlt className="text-white bg-black rounded-full w-10 h-10 p-2 text-2xl inline-block" /> study with coding</h1>
+    <h1 className="text-4xl font-normal w-3/4 leading-title mb-7 lg:mb-14">Improve your skills by <BiCodeAlt className="text-white bg-black rounded-full w-10 h-10 p-2 text-2xl inline-block" /> study with coding</h1>
   )
 }
 
 export const HeroParagraph = () => {
   return (
-    <p className="text-xs font-normal tracking-hero leading-4 w-3/4 mb-6">Create, launch, and iterate on new marketing campaigns without distracting your product team.</p>
+    <p className="text-xs font-normal tracking-hero leading-4 w-3/4 mb-6 lg:mb-12">Create, launch, and iterate on new marketing campaigns without distracting your product team.</p>
   )
 }
 

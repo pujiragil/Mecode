@@ -4,7 +4,7 @@ import { HeroButton, HeroParagraph, HeroTitle, Person, ShapeYellow, Code } from 
 export const HeroText = () => {
   return (
     <div>
-      <HeroTitle/>
+      <HeroTitle icon="true"/>
       <img className="mb-px lg:mb-4" src={line} alt="line" />
       <HeroParagraph/>
       <HeroButton/>

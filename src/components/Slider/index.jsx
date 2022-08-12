@@ -1,15 +1,19 @@
 import React from 'react'
+import arrow from '../../assets/arrow.svg'
 
 import { Paragraph } from '../GlobalElements'
 import { HeroTitle } from '../Hero/HeroElements'
-import { CardItem, CardWrapper } from './SliderElements'
+import { CardWrapper } from './SliderElements'
 
 const Slider = () => {
   return (
     <>
-      <div className="p-4 text-black h-slider">
-        <HeroTitle text="Our Features Special For You" icon="false" />
-        <Paragraph mb="mb-5" text="We provide various special features for all of you" />
+      <div className="relative p-4 md:pt-10 lg:pt-4 text-black h-slider lg:h-lg-slider lg:flex lg:items-center lg:justify-center">
+        <div className="lg:w-3/4">
+          <HeroTitle text="Our Features Special For You" icon="false" />
+          <Paragraph mb="mb-5" text="We provide various special features for all of you" />
+        </div>
+        <img className="hidden lg:block absolute w-40 lg:left-60 lg:bottom-20 lg:-rotate-45" src={arrow} alt="arrow" />
         <CardWrapper />
       </div>
     </>

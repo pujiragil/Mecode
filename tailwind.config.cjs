@@ -28,7 +28,9 @@ module.exports = {
         'lg-code': '350px',
         'lg-person': '500px',
         'slider': '650px',
-        'card': '343px'
+        'lg-slider': '518px',
+        'card': '343px',
+        'slide': '430px'
       },
       width: {
         'person': '274px',
@@ -46,6 +48,9 @@ module.exports = {
       },
       margin: {
         '70px': '70px'
+      },
+      rotate: {
+        '120deg': '120deg'
       }
     },
   },

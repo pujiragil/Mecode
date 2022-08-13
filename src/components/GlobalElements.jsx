@@ -1,5 +1,9 @@
-export const Paragraph = ({text, mb}) => {
+export const Paragraph = ({text, mb, width}) => {
   return (
-    <p className={`font-inter font-extralight w-1/2 ${mb} lg:text-xl md:mb-10 lg:mb-0`}>{text}</p>
+    <p className={`font-inter font-extralight ${width} ${mb} lg:text-xl md:mb-10 lg:mb-0`}>{text}</p>
   )
+}
+
+export const Button = ({text, style, icon}) => {
+  return <button className={`${style}`}>{text}{icon && icon}</button>
 }

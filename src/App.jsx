@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar"
 import { HeroImage, HeroText } from "./components/Hero"
 import Platform from "./components/Platform"
 import Slider from "./components/Slider"
+import Section from "./components/Section"
 
 function App() {
   return (
@@ -25,6 +26,11 @@ function App() {
       <div className="bg-main">
         <div className="container mx-auto">
           <Slider/>
+        </div>
+      </div>
+      <div className="bg-white">
+        <div className="container mx-auto">
+          <Section/>
         </div>
       </div>
     </>

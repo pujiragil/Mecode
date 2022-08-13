@@ -10,8 +10,12 @@ module.exports = {
         'roboto': ['Roboto', 'sans-serif'],
         'code': ['Source Code Pro', 'monospace']
       },
+      colors: {
+        'primary': '#DDF247'
+      },
       backgroundColor: {
         'main': '#F4F4F4',
+        'primary-button': '#010101',
         'primary-card': '#DDF247'
       },
       lineHeight: {
@@ -30,7 +34,7 @@ module.exports = {
         'slider': '650px',
         'lg-slider': '518px',
         'card': '343px',
-        'slide': '430px'
+        'slide': '400px'
       },
       width: {
         'person': '274px',

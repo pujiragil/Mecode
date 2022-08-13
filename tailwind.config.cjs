@@ -13,6 +13,9 @@ module.exports = {
       colors: {
         'primary': '#DDF247'
       },
+      borderColor: {
+        'main': '#E4E4E4'
+      },
       backgroundColor: {
         'main': '#F4F4F4',
         'primary-button': '#010101',

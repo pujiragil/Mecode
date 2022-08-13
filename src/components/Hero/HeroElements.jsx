@@ -4,13 +4,13 @@ import code from '../../assets/code.png'
 import { BiCodeAlt } from 'react-icons/bi'
 import { BsArrowUpRight } from 'react-icons/bs'
 
-export const HeroTitle = ({ text, icon, width}) => {
+export const HeroTitle = ({ text, icon, style}) => {
   return (
     <>
       {icon === 'true' ? (
         <h1 className="text-4xl lg:text-5xl font-normal w-3/4 leading-title mb-7 lg:mb-14 font-roboto">Improve your skills by <BiCodeAlt className="text-white bg-black rounded-full w-10 h-10 p-2 text-2xl inline-block" /> study with coding</h1>
       ): (
-        <h1 className={`text-4xl ${width} md:w-2/5 lg:w-3/4 lg:text-5xl font-medium leading-title mb-4 lg:mb-10 font-roboto`}>{text}</h1>
+        <h1 className={`text-4xl ${style} md:w-2/5 lg:w-3/4 lg:text-5xl font-medium leading-title font-roboto`}>{text}</h1>
       )}
     </>
   )

@@ -51,7 +51,7 @@ module.exports = {
         'card': '300px'
       },
       inset: {
-        '73': '73px'
+        '73': '73px',
       },
       margin: {
         '70px': '70px'

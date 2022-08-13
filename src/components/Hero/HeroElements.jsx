@@ -10,7 +10,7 @@ export const HeroTitle = ({ text, icon, style}) => {
       {icon === 'true' ? (
         <h1 className="text-4xl lg:text-5xl font-normal w-3/4 leading-title mb-7 lg:mb-14 font-roboto">Improve your skills by <BiCodeAlt className="text-white bg-black rounded-full w-10 h-10 p-2 text-2xl inline-block" /> study with coding</h1>
       ): (
-        <h1 className={`text-4xl ${style} font-medium leading-title font-roboto`}>{text}</h1>
+        <h1 className={`text-4xl ${style} leading-title font-roboto`}>{text}</h1>
       )}
     </>
   )
@@ -24,7 +24,7 @@ export const HeroParagraph = () => {
 
 export const HeroButton = () => {
   return (
-    <button className="text-white bg-black py-3 px-5 flex justify-center items-center gap-x-4 font-medium font-inter">
+    <button className="text-white bg-black py-3 px-5 flex justify-center items-center gap-x-4 font-medium font-roboto">
       Get Started <BsArrowUpRight className="inline-block font-medium"/>
     </button>
   )

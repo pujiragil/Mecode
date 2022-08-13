@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],
-        'code': ['Source Code Pro', 'monospace']
+        'inter': ['Inter', 'sans-serif']
       },
       colors: {
         'primary': '#DDF247'

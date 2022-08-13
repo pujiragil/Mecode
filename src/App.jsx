@@ -3,6 +3,7 @@ import { HeroImage, HeroText } from "./components/Hero"
 import Platform from "./components/Platform"
 import Slider from "./components/Slider"
 import Section from "./components/Section"
+import Card from "./components/Card"
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <div className="bg-white">
         <div className="container mx-auto">
           <Section/>
+          <Card/>
         </div>
       </div>
     </>

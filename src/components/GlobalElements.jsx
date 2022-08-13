@@ -1,6 +1,6 @@
 export const Paragraph = ({text, mb, width}) => {
   return (
-    <p className={`font-inter font-extralight ${width} ${mb} lg:text-xl md:mb-10 lg:mb-0`}>{text}</p>
+    <p className={`font-inter font-extralight ${width} ${mb} lg:text-xl md:mb-10`}>{text}</p>
   )
 }
 

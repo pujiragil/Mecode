@@ -13,7 +13,7 @@ const Slider = () => {
           <HeroTitle text="Our Features Special For You" icon="false" style="w-3/4 mb-4"/>
           <Paragraph mb="mb-5" text="We provide various special features for all of you" width="w-1/2"/>
         </div>
-        <img className="hidden lg:block absolute w-40 lg:left-60 lg:bottom-20 lg:-rotate-45" src={arrow} alt="arrow" />
+        <img className="hidden lg:block absolute w-40 lg:left-60 lg:bottom-[140px] lg:-rotate-45" src={arrow} alt="arrow" />
         <CardWrapper />
       </div>
     </>

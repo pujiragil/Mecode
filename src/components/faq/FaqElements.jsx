@@ -34,14 +34,14 @@ export const FaqSection = ({text}) => {
 
 export const FaqSubtitle = ({ text }) => {
   return (
-    <h2 className="font-roboto font-medium text-xl w-3/4">{text}</h2>
+    <h2 className="font-inter font-medium text-xl w-3/4">{text}</h2>
   )
 }
 
 export const FaqButton = ({open, clickOpen}) => {
   return (
     <div>
-      <button onClick={clickOpen} className="bg-primary-card rounded-full w-10 h-10 block text-2xl font-medium flex justify-center items-center">{open ? <FaMinus/> : <FaPlus/>}</button>
+      <button onClick={clickOpen} className="bg-primary-card rounded-full w-10 h-10 block text-xl  flex justify-center items-center">{open ? <FaMinus/> : <FaPlus/>}</button>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import Slider from "./components/Slider"
 import Section from "./components/Section"
 import Card from "./components/Card"
 import FAQ from "./components/faq"
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -35,6 +36,11 @@ function App() {
           <Section/>
           <Card/>
           <FAQ/>
+        </div>
+      </div>
+      <div className="bg-black">
+        <div className="container mx-auto">
+          <Footer/>
         </div>
       </div>
     </>

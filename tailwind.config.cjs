@@ -11,10 +11,12 @@ module.exports = {
         'inter': ['Inter', 'sans-serif']
       },
       colors: {
-        'primary': '#DDF247'
+        'primary': '#DDF247',
+        'icon': '#A3A3A3'
       },
       borderColor: {
-        'main': '#E4E4E4'
+        'main': '#E4E4E4',
+        'icon': '#A3A3A3'
       },
       backgroundColor: {
         'main': '#F4F4F4',
@@ -26,6 +28,9 @@ module.exports = {
       },
       letterSpacing: {
         'hero': '0.11rem'
+      },
+      dropShadow: {
+        'footer': '-5px 25px 25px rgba(222, 242, 71, 0.4)'
       },
       height: {
         'hero': '479px',

@@ -4,6 +4,7 @@ import Platform from "./components/Platform"
 import Slider from "./components/Slider"
 import Section from "./components/Section"
 import Card from "./components/Card"
+import FAQ from "./components/faq"
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <div className="container mx-auto">
           <Section/>
           <Card/>
+          <FAQ/>
         </div>
       </div>
     </>

@@ -21,7 +21,7 @@ export const CardItem = ({ primary, style, title, price, modules }) => {
         ))}
       </div>
       <button className={`${primary ? "bg-primary-card text-black" : "bg-white text-primary"} font-bold text-lg w-full rounded-lg py-4`}>Buy Now</button>
-      {primary && <img className="absolute top-40 left-20 w-10" src={card} alt="new" />}
+      {primary && <img className="absolute top-[100px] left-10 md:left-[100px] lg:top-36 lg:left-20 w-10" src={card} alt="new" />}
     </div>
   )
 }

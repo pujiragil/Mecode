@@ -37,7 +37,8 @@ module.exports = {
         'slider': '650px',
         'lg-slider': '518px',
         'card': '343px',
-        'slide': '400px'
+        'slide': '400px',
+        'initial': 'initial'
       },
       width: {
         'person': '274px',

@@ -4,11 +4,15 @@ import { FooterCard, FooterCopy, FooterLink, FooterMenu, FooterTitle } from './F
 const Footer = () => {
   return (
     <div className="px-8 py-12">
-      <FooterCard/>
-      <FooterTitle/>
-      <FooterMenu/>
-      <FooterLink/>
-      <FooterCopy/>
+      <FooterCard />
+      <div className="md:flex justify-between items-center md:mb-10">
+        <FooterTitle />
+        <FooterMenu />
+      </div>
+      <div className="md:flex md:pt-10 border-t border-icon justify-between items-center">
+        <FooterLink />
+        <FooterCopy />
+      </div>
     </div>
   )
 }

@@ -1,8 +1,8 @@
-import code from '../../assets/code2.png'
+import code from '../../assets/code2.webp'
 import triangle from '../../assets/triangle.svg'
 import university from '../../assets/university.svg'
 import showcase from '../../assets/showcase.svg'
-import tutors from '../../assets/tutors.png'
+import tutors from '../../assets/tutors.webp'
 import { Button, Paragraph } from "../GlobalElements"
 import { HeroTitle } from "../Hero/HeroElements"
 import { BsArrowRight } from "react-icons/bs"

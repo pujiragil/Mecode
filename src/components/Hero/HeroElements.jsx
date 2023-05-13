@@ -1,6 +1,6 @@
 import yellow from '../../assets/yellow.svg'
-import person from '../../assets/person.png'
-import code from '../../assets/code.png'
+import person from '../../assets/person.webp'
+import code from '../../assets/code.webp'
 import { BiCodeAlt } from 'react-icons/bi'
 import { BsArrowUpRight } from 'react-icons/bs'
 

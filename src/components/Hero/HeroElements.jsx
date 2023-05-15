@@ -1,6 +1,3 @@
-import yellow from '../../assets/yellow.svg'
-import person from '../../assets/person.webp'
-import code from '../../assets/code.webp'
 import { BiCodeAlt } from 'react-icons/bi'
 import { BsArrowUpRight } from 'react-icons/bs'
 
@@ -33,7 +30,7 @@ export const HeroButton = () => {
 export const ShapeYellow = () => {
   return (
     <div className="relative w-full h-full overflow-hidden">
-      <img className="absolute flex justify-center w-96 h-full left-9 md:absolute md:right-10 md:left-auto lg:w-lg-yellow lg:absolute lg:h-lg-yellow lg:right-auto lg:left-[73]" src={yellow} alt="shape" />
+      <img className="absolute flex justify-center w-96 h-full left-9 md:absolute md:right-10 md:left-auto lg:w-lg-yellow lg:absolute lg:h-lg-yellow lg:right-auto lg:left-[73]" src="/assets/yellow.svg" alt="shape" />
     </div>
   )
 }
@@ -41,13 +38,13 @@ export const ShapeYellow = () => {
 export const Person = () => {
   return (
     <div className="absolute w-full h-full overflow-hidden">
-      <img className="absolute z-10 h-person w-person bottom-0 right-0 md:right-48 sm:right-36 lg:w-lg-person lg:h-lg-person object-cover lg:right-auto lg:left-60" src={person} alt="person" />
+      <img className="absolute z-10 h-person w-person bottom-0 right-0 md:right-48 sm:right-36 lg:w-lg-person lg:h-lg-person object-cover lg:right-auto lg:left-60" src="/assets/person.webp" alt="person" />
     </div>
   )
 }
 
 export const Code = () => {
   return (
-    <img className="absolute h-code lg:h-lg-code md:h-80 sm:h-60 w-80 lg:w-lg-code md:w-3/4 sm:w-3/5 object-cover md:bottom-10 lg:-left-40 md:-left-4 -left-2 bottom-24" src={code} alt="code" />
+    <img className="absolute h-code lg:h-lg-code md:h-80 sm:h-60 w-80 lg:w-lg-code md:w-3/4 sm:w-3/5 object-cover md:bottom-10 lg:-left-40 md:-left-4 -left-2 bottom-24" src="/assets/code.webp" alt="code" />
   )
 }

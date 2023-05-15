@@ -1,15 +1,9 @@
-import coursera from "../../assets/coursera.svg";
-import edx from "../../assets/edx.svg";
-import udemy from "../../assets/udemy.svg";
-import {
-  PlatformImage,
-  Triangle,
-} from "./PlatformElements";
+import { PlatformImage, Triangle } from "./PlatformElements";
 
 const platforms = [
   {
     id: "edx",
-    src: edx,
+    src: "/assets/edx.svg",
     alt: "edx-icon",
     width: 51,
     height: 31,
@@ -17,7 +11,7 @@ const platforms = [
   },
   {
     id: "udemy",
-    src: udemy,
+    src: "/assets/udemy.svg",
     alt: "udemy-icon",
     width: 84,
     height: 32,
@@ -25,7 +19,7 @@ const platforms = [
   },
   {
     id: "coursera",
-    src: coursera,
+    src: "/assets/coursera.svg",
     alt: "coursera-icon",
     width: 83,
     height: 13,

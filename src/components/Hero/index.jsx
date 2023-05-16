@@ -3,6 +3,19 @@ import { Heading, Paragraph } from "../GlobalElements";
 import Layout from "../Layout";
 import Navbar from "../Navbar";
 
+const HeroButton = () => {
+  return (
+    <button className="px-5 py-3 flex items-center gap-4 font-poppins font-medium bg-black text-white md:text-[22px]">
+      Get started
+      <img
+        className="w-[35px] h-[35px] object-center md:w-[45px] md:h-[45px]"
+        src="/assets/arrow-button.svg"
+        alt="arrow"
+      />
+    </button>
+  );
+};
+
 export const HeroText = () => {
   return (
     <div className="space-y-6">
@@ -20,7 +33,7 @@ export const HeroText = () => {
           text="Create, launch, and iterate on new marketing campaigns without distracting your product team."
         />
       </div>
-      {/* <HeroButton /> */}
+      <HeroButton />
     </div>
   );
 };

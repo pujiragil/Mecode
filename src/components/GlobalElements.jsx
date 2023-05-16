@@ -38,14 +38,23 @@ export const Heading = ({ type, text, widths }) => {
   }
 };
 
-export const Paragraph = ({ isPrimary, sizes, widths, text }) => {
+export const Paragraph = ({ isPrimary, sizes, weights, widths, text }) => {
+  const generateClassname = (isPrimary, sizes, weights, widths) => {
+    const selectedFont = isPrimary ? "font-source" : "font-poppins";
+    const fontSize = sizes?.length ? sizes.join(" ") : null;
+    const fontWeight = weights?.length ? weights.join(" ") : null;
+    const textWidth = widths?.length ? widths.join(" ") : null;
+    return [selectedFont, fontSize, fontWeight, textWidth].join(" ");
+  };
+
   return (
     <p
-      className={`${
-        (isPrimary ? "font-source" : "font-poppins",
-        sizes?.length ? sizes.join(" ") : "",
-        widths?.length ? widths.join(" ") : "")
-      } text-black leading-5 tracking-widest`}
+      className={`${generateClassname(
+        isPrimary,
+        sizes,
+        weights,
+        widths
+      )} text-black leading-5`}
     >
       {text}
     </p>

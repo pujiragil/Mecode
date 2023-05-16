@@ -1,14 +1,14 @@
-import { Button, Paragraph } from "../GlobalElements";
-import { HeroTitle } from "../Hero/HeroElements";
+import { Button, Heading, Paragraph } from "../GlobalElements";
 import { BsArrowRight } from "react-icons/bs";
 
 export const SectionOne = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-center lg:justify-between lg:items-end items-center mb-20">
       <div className="mb-20 lg:order-2 lg:w-2/5">
-        <HeroTitle
+        <Heading
+          type="h2"
+          widths={["w-full"]}
           text="The language for building web pages"
-          style="w-full mb-5 md:w-3/5 font-bold"
         />
         <Paragraph
           text="Go live on a fast, reliable, and hassle-free hosting network that scales with your business with one click and go code!"
@@ -39,10 +39,11 @@ export const SectionOne = () => {
 
 export const SectionTwo = () => {
   return (
-    <div className="md:flex flex-col justify-center lg:items-start items-center mb-14 md:mb-20">
-      <HeroTitle
+    <div className="text-center md:text-left md:flex flex-col justify-center lg:items-start items-center mb-14 md:mb-20">
+      <Heading
+        type="h2"
+        widths={["w-full", "md:w-4/5"]}
         text="Get up and running fast together"
-        style="w-full font-bold text-center lg:text-left mb-20 md:w-1/2"
       />
       <div className="relative grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 gap-y-28 lg:w-4/5 lg:content-start lg:justify-items-start">
         <CardSection

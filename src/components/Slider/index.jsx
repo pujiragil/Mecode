@@ -1,21 +1,23 @@
-import { Paragraph } from "../GlobalElements";
-import { HeroTitle } from "../Hero/HeroElements";
+import { Heading, Paragraph } from "../GlobalElements";
 import { CardWrapper } from "./SliderElements";
 
 const Slider = () => {
   return (
     <>
-      <div className="relative p-4 md:pt-10 lg:pt-4 text-black h-slider min-h-fit lg:h-lg-slider lg:flex lg:items-center lg:justify-center">
-        <div className="lg:w-3/4">
-          <HeroTitle
+      <div className="relative w-full flex flex-col gap-6 md:flex-row">
+        <div className="basis-1/2 space-y-[18px]">
+          <Heading
+            type="h2"
+            widths={["w-4/5"]}
             text="Our Features Special For You"
-            icon="false"
-            style="w-3/4 mb-4 font-bold"
           />
           <Paragraph
-            mb="mb-5"
-            text="We provide various special features for all of you"
-            width="w-1/2"
+            isPrimary={false}
+            sizes={["text-base"]}
+            widths={["w-9/12"]}
+            weights={["font-extralight"]}
+            text="We provide various special
+            features for all of you"
           />
         </div>
         <img

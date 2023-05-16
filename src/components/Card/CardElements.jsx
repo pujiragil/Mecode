@@ -1,9 +1,10 @@
-import { HeroTitle } from "../Hero/HeroElements";
+import { Heading } from "../GlobalElements";
 
 export const CardHeader = () => {
   return (
     <div className="flex flex-col justify-center items-center text-center mb-24">
-      <HeroTitle text="Choose your package" style="font-bold w-3/5 mb-6" />
+      <Heading type="h2" text="Choose your package" />
+      {/* <HeroTitle text="Choose your package" style="font-bold w-3/5 mb-6" /> */}
       <p className="font-inter text-lg w-3/5">
         We provide various types of packages just for you
       </p>

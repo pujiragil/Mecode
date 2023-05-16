@@ -2,6 +2,7 @@ import Core, { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Heading, Paragraph } from "../GlobalElements";
 
 export const CardItem = ({ primary, branch, title, text }) => {
   return (
@@ -13,8 +14,10 @@ export const CardItem = ({ primary, branch, title, text }) => {
       <div className={`bg-white w-fit p-5 rounded-lg mb-[70px]`}>
         <img src={branch} alt="branch" />
       </div>
-      <h1 className="text-3xl font-roboto font-bold mb-3.5">{title}</h1>
-      <p className="font-inter w-3/4">{text}</p>
+      <div className="space-y-3.5">
+        <Heading type="h3" text={title} />
+        <Paragraph widths={["w-full"]} text={text}/>
+      </div>
     </div>
   );
 };
@@ -22,7 +25,7 @@ export const CardItem = ({ primary, branch, title, text }) => {
 export const CardWrapper = () => {
   Core.use([Autoplay, Pagination]);
   return (
-    <div className="flex items-center justify-center overflow-hidden w-full gap-4">
+    <div className="flex items-center justify-center overflow-hidden w-full gap-4 md:basis-full">
       <Swiper
         pagination={{ clickable: true }}
         modules={[Pagination]}

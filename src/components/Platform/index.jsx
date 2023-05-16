@@ -29,7 +29,7 @@ const platforms = [
 
 const Platform = () => {
   return (
-    <div className="relative grid grid-cols-3 h-48 lg:h-72 w-full place-items-center gap-14 p-6 md:gap-28 lg:gap-[154px]">
+    <div className="relative grid grid-cols-3 h-48 lg:h-72 w-full place-items-center gap-14 p-6 md:gap-28 lg:gap-[154px] lg:px-32">
       <Triangle />
       {platforms.map((platform) => (
         <PlatformImage

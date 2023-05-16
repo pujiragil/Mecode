@@ -4,8 +4,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        poppins: ["Poppins", "sans-serif"],
         source: ["Source Code Pro", "monospace"],
+      },
+      container: {
+        screens: {
+          "2xl": "1440px",
+        },
       },
       colors: {
         primary: "#DDF247",

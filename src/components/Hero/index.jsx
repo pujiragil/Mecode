@@ -2,13 +2,6 @@ import content from "../../data/content.json";
 import { Heading, Paragraph } from "../GlobalElements";
 import Layout from "../Layout";
 import Navbar from "../Navbar";
-import {
-  HeroButton,
-  HeroParagraph,
-  Person,
-  ShapeYellow,
-  Code,
-} from "./HeroElements";
 
 export const HeroText = () => {
   return (
@@ -27,7 +20,7 @@ export const HeroText = () => {
           text="Create, launch, and iterate on new marketing campaigns without distracting your product team."
         />
       </div>
-      <HeroButton />
+      {/* <HeroButton /> */}
     </div>
   );
 };

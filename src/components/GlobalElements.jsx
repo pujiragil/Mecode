@@ -1,10 +1,10 @@
-export const Heading = ({ type, text, width }) => {
+export const Heading = ({ type, text, widths }) => {
   switch (type) {
     case "h1": {
       return (
         <h1
           className={`font-source font-medium text-black text-[34px] tracking-wide leading-10 md:text-6xl md:leading-[75px] ${
-            width?.length ? width.join(" ") : ""
+            widths?.length ? widths.join(" ") : ""
           }`}
         >
           {text}
@@ -14,22 +14,38 @@ export const Heading = ({ type, text, width }) => {
 
     case "h2": {
       return (
-        <h1
-          className={`font-poppins font-medium text-black text-[34px] leading-10 tracking-[0.25px] md:text-5xl md:font-bold md:leading-normal md:w-4/5 ${
-            width?.length ? width.join(" ") : ""
+        <h2
+          className={`font-poppins font-bold text-black text-[34px] leading-10 tracking-[0.25px] md:text-5xl md:leading-normal ${
+            widths?.length ? widths.join(" ") : ""
           }`}
         >
           {text}
-        </h1>
+        </h2>
+      );
+    }
+
+    case "h3": {
+      return (
+        <h3
+          className={`font-poppins font-bold text-black text-2xl tracking-[0.25px] md:text-[34px] ${
+            widths?.length ? widths.join(" ") : ""
+          }`}
+        >
+          {text}
+        </h3>
       );
     }
   }
 };
 
-export const Paragraph = ({ text, mb, width }) => {
+export const Paragraph = ({ isPrimary, sizes, widths, text }) => {
   return (
     <p
-      className={`font-inter font-extralight ${width} ${mb} lg:text-xl md:mb-10`}
+      className={`${
+        (isPrimary ? "font-source" : "font-poppins",
+        sizes?.length ? sizes.join(" ") : "",
+        widths?.length ? widths.join(" ") : "")
+      } text-black leading-5 tracking-widest`}
     >
       {text}
     </p>

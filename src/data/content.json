@@ -1,0 +1,7 @@
+{
+  "navbar": {
+    "imgLink": "/assets/icon.svg",
+    "title": "mecode",
+    "links": ["Tutorials", "Case Studies", "Resources"]
+  }
+}

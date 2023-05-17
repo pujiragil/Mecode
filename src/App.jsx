@@ -1,9 +1,4 @@
-import content from "./data/content.json";
-
-import Navbar from "./components/Navbar";
-import HeroSection, { HeroImage, HeroText } from "./components/Hero";
-import Platform from "./components/Platform";
-import Slider from "./components/Slider";
+import { HeroSection, PlatformSection, FeatureSection } from "./components";
 import Section from "./components/Section";
 import Card from "./components/Card";
 import FAQ from "./components/faq";
@@ -13,16 +8,8 @@ function App() {
   return (
     <>
       <HeroSection />
-      <div className="bg-white">
-        <div className="container mx-auto">
-          <Platform />
-        </div>
-      </div>
-      <div className="bg-main">
-        <div className="container mx-auto p-5">
-          <Slider />
-        </div>
-      </div>
+      <PlatformSection />
+      <FeatureSection />
       <div className="bg-white">
         <div className="container mx-auto">
           <Section />

@@ -69,7 +69,7 @@ export default function HeroSection() {
   return (
     <Layout bg={"bg-[#FAFAFA]"}>
       <div className="grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1">
-        <div className="p-5 pb-20 space-y-14 lg:p-6 lg:pb-20">
+        <div className="p-5 pb-20 space-y-14 md:p-6 md:pb-20">
           <Navbar data={content.navbar} />
           <HeroText />
         </div>

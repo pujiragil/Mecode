@@ -18,7 +18,7 @@ export const Toggle = () => {
 
 export const NavMenu = ({ links }) => {
   return (
-    <div className="hidden md:flex justify-center items-center gap-x-8 font-inter md:text-sm lg:text-base">
+    <div className="hidden font-poppins md:flex justify-center items-center gap-x-8 font-inter md:text-sm lg:text-base">
       {links.map((link, idx) => (
         <a key={idx} className="block" href="#">
           {link}

@@ -3,7 +3,7 @@ export const Heading = ({ type, text, widths }) => {
     case "h1": {
       return (
         <h1
-          className={`font-source font-medium text-black text-[34px] tracking-wide leading-10 md:text-6xl md:leading-[75px] ${
+          className={`font-source font-medium text-black text-[34px] leading-10 md:text-6xl md:leading-[75px] ${
             widths?.length ? widths.join(" ") : ""
           }`}
         >

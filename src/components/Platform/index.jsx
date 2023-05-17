@@ -51,7 +51,7 @@ const Triangle = () => {
 };
 
 
-const Platform = () => {
+const PlatformSection = () => {
   return (
     <Layout bg="bg-white" padding={["px-5", "py-10","md:px-6", "md:py-12"]}>
       <div className="relative grid grid-cols-3 place-items-center gap-14">
@@ -71,4 +71,4 @@ const Platform = () => {
   );
 };
 
-export default Platform;
+export default PlatformSection;

@@ -1,4 +1,4 @@
-import { PlatformImage, Triangle } from "./PlatformElements";
+import Layout from "../Layout";
 
 const platforms = [
   {
@@ -27,21 +27,47 @@ const platforms = [
   },
 ];
 
+const PlatformImage = ({ src, alt, width, height, isLazy }) => {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={isLazy ? "lazy" : "eager"}
+      className="w-full h-auto sm:w-full sm:max-w-[10rem] md:max-w-[11rem] lg:max-w-[12rem]"
+    />
+  );
+};
+
+const Triangle = () => {
+  return (
+    <img
+      className="absolute z-10 w-32 -top-28 right-0 sm:w-40 sm:-top-32 lg:-top-36 lg:w-44"
+      src="/assets/triangle.svg"
+      alt="triangle"
+    />
+  );
+};
+
+
 const Platform = () => {
   return (
-    <div className="relative grid grid-cols-3 h-48 lg:h-72 w-full place-items-center gap-14 p-6 md:gap-28 lg:gap-[154px] lg:px-32">
-      <Triangle />
-      {platforms.map((platform) => (
-        <PlatformImage
-          key={platform.id}
-          src={platform.src}
-          alt={platform.alt}
-          width={platform.width}
-          height={platform.height}
-          isLazy={platform.isLazy}
-        />
-      ))}
-    </div>
+    <Layout bg="bg-white" padding={["px-5", "py-10","md:px-6", "md:py-12"]}>
+      <div className="relative grid grid-cols-3 place-items-center gap-14">
+        <Triangle />
+        {platforms.map((platform) => (
+          <PlatformImage
+            key={platform.id}
+            src={platform.src}
+            alt={platform.alt}
+            width={platform.width}
+            height={platform.height}
+            isLazy={platform.isLazy}
+          />
+        ))}
+      </div>
+    </Layout>
   );
 };
 

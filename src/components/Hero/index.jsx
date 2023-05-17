@@ -15,12 +15,15 @@ const HeroButton = () => {
     </button>
   );
 };
-
-export const HeroText = () => {
+const HeroText = () => {
   return (
     <div className="space-y-6">
       <div className="space-y-4">
-        <Heading type="h1" widths={["w-full"]} text="Improve your skills by study with coding" />
+        <Heading
+          type="h1"
+          widths={["w-full"]}
+          text="Improve your skills by study with coding"
+        />
         <img
           className="w-16 h-auto object-cover"
           src="/assets/line.svg"
@@ -38,7 +41,7 @@ export const HeroText = () => {
   );
 };
 
-export const HeroImage = () => {
+const HeroImage = () => {
   return (
     <div className="relative lg:after:absolute lg:after:top-0 lg:after:left-0 lg:after:bg-black lg:after:h-full lg:after:w-[50vw]">
       <div className="relative flex justify-center items-center w-full h-full overflow-hidden bg-black">

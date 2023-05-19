@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-pagination-bullet {
+   border-radius: 0;
+   height: 10px;
+   width: 50px;
+   background: #CFCFCF;
+   opacity: 1;
+   transition: all 0.3s ease-in;
+}
+
+.swiper-pagination-bullet-active {
+   background: #DDF247;
+   width: 80px;
+}

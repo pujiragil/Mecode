@@ -1,6 +1,10 @@
-import { HeroSection, PlatformSection, FeatureSection } from "./components";
-import Section from "./components/Section";
-import Card from "./components/Card";
+import {
+  HeroSection,
+  PlatformSection,
+  FeatureSection,
+  PriceSection,
+  CardSection,
+} from "./components";
 import FAQ from "./components/faq";
 import Footer from "./components/Footer";
 
@@ -12,8 +16,8 @@ function App() {
       <FeatureSection />
       <div className="bg-white">
         <div className="container mx-auto">
-          <Section />
-          <Card />
+          <CardSection />
+          <PriceSection />
           <FAQ />
         </div>
       </div>

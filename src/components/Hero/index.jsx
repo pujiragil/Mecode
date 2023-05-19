@@ -5,7 +5,7 @@ import Navbar from "../Navbar";
 
 const HeroButton = () => {
   return (
-    <button className="px-6 py-3 flex items-center gap-3 font-poppins font-medium bg-black text-white rounded md:text-xl">
+    <button className="px-6 py-3 flex items-center gap-3 font-poppins font-semibold bg-black text-white rounded md:text-xl">
       Get started
       <img
         className="w-8 h-auto md:w-10"
@@ -32,7 +32,7 @@ const HeroText = () => {
         <Paragraph
           isPrimary={true}
           sizes={["text-xs", "md:text-base"]}
-          widths={["w-full", "md:w-4/5"]}
+          widths={["w-full", "md:w-8/12", "lg:w-3/4"]}
           text="Create, launch, and iterate on new marketing campaigns without distracting your product team."
         />
       </div>

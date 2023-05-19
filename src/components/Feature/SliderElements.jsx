@@ -5,11 +5,12 @@ import { Heading, Paragraph } from "../GlobalElements";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import useSwiperRef from "../../hooks/swiper";
 
 const CardItem = ({ background, imgLink, title, description }) => {
   return (
     <section
-      className={`p-8 pb-16 flex flex-col justify-between rounded-xl h-96 ${background}`}
+      className={`p-8 pb-12 flex flex-col rounded-xl gap-28 h-full ${background}`}
     >
       <div className="w-20 h-20 flex justify-center items-center bg-white rounded-xl">
         <img className="w-10 h-10 object-contain" src={imgLink} alt="branch" />
@@ -23,19 +24,24 @@ const CardItem = ({ background, imgLink, title, description }) => {
 };
 
 export const CardWrapper = () => {
+  const [paginationEl, paginationRef] = useSwiperRef()
+
   return (
-    <div className="flex items-center justify-center overflow-hidden w-full gap-4 md:basis-full">
+    <div className="flex flex-col overflow-hidden w-full gap-6 md:basis-full">
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{
           clickable: true,
+          el: paginationEl,
         }}
-        autoplay={true}
+        autoplay={{
+          delay: 3000,
+        }}
         slidesPerView="auto"
         centeredSlides={true}
         spaceBetween={40}
       >
-        <SwiperSlide className="w-[300px] h-96">
+        <SwiperSlide className="w-[300px]">
           <CardItem
             background="bg-white"
             imgLink="/assets/branch1.svg"
@@ -43,7 +49,7 @@ export const CardWrapper = () => {
             description="Bring your design vision to life in clean, semantic HTML5"
           />
         </SwiperSlide>
-        <SwiperSlide className="w-[300px] h-96">
+        <SwiperSlide className="w-[300px]">
           <CardItem
             background="bg-[#DDF247]"
             imgLink="/assets/branch2.svg"
@@ -51,7 +57,7 @@ export const CardWrapper = () => {
             description="Connect your marketing tools with built-in integrations"
           />
         </SwiperSlide>
-        <SwiperSlide className="w-[300px] h-96">
+        <SwiperSlide className="w-[300px]">
           <CardItem
             background="bg-white"
             imgLink="/assets/branch3.svg"
@@ -60,6 +66,7 @@ export const CardWrapper = () => {
           />
         </SwiperSlide>
       </Swiper>
+      <div className="flex justify-center gap-4" ref={paginationRef}></div>
     </div>
   );
 };

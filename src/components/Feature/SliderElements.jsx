@@ -31,7 +31,7 @@ export const CardWrapper = () => {
       <Swiper
         modules={[Pagination, Autoplay]}
         className="w-full"
-        slidesPerView={1}
+        slidesPerView="auto"
         centeredSlides={true}
         spaceBetween={40}
         pagination={{
@@ -40,17 +40,6 @@ export const CardWrapper = () => {
         }}
         autoplay={{
           delay: 3000,
-        }}
-        breakpoints={{
-          640: {
-            slidesPerView: "auto"
-          },
-          768: {
-            slidesPerView: "auto"
-          },
-          1024: {
-            slidesPerView: "auto"
-          }
         }}
       >
         <SwiperSlide className="w-[300px]">

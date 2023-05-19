@@ -1,69 +1,65 @@
-import Core, { Autoplay, Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
 import { Heading, Paragraph } from "../GlobalElements";
 
-export const CardItem = ({ primary, branch, title, text }) => {
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+
+const CardItem = ({ background, imgLink, title, description }) => {
   return (
-    <div
-      className={`${
-        primary ? "bg-primary-card" : "bg-white"
-      } h-card min-w-card rounded-lg p-8`}
+    <section
+      className={`p-8 pb-16 flex flex-col justify-between rounded-xl h-96 ${background}`}
     >
-      <div className={`bg-white w-fit p-5 rounded-lg mb-[70px]`}>
-        <img src={branch} alt="branch" />
+      <div className="w-20 h-20 flex justify-center items-center bg-white rounded-xl">
+        <img className="w-10 h-10 object-contain" src={imgLink} alt="branch" />
       </div>
       <div className="space-y-3.5">
         <Heading type="h3" text={title} />
-        <Paragraph widths={["w-full"]} text={text}/>
+        <Paragraph text={description} />
       </div>
-    </div>
+    </section>
   );
 };
 
 export const CardWrapper = () => {
-  Core.use([Autoplay, Pagination]);
   return (
     <div className="flex items-center justify-center overflow-hidden w-full gap-4 md:basis-full">
       <Swiper
-        pagination={{ clickable: true }}
-        modules={[Pagination]}
-        className="h-slide"
-        slidesPerView={"auto"}
+        modules={[Pagination, Autoplay]}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={true}
+        slidesPerView="auto"
         centeredSlides={true}
-        spaceBetween={20}
-        autoplay={{ delay: 3000 }}
-        loop={true}
+        spaceBetween={40}
       >
-        <SwiperSlide className="w-card h-card">
+        <SwiperSlide className="w-[300px] h-96">
           <CardItem
-            primary={false}
-            branch="/assets/branch1.svg"
+            background="bg-white"
+            imgLink="/assets/branch1.svg"
             title="Best Tutors"
-            text="Bring your design vision to life in clean, semantic HTML5"
+            description="Bring your design vision to life in clean, semantic HTML5"
           />
         </SwiperSlide>
-
-        <SwiperSlide className="w-card h-card">
+        <SwiperSlide className="w-[300px] h-96">
           <CardItem
-            primary={true}
-            branch="/assets/branch2.svg"
+            background="bg-[#DDF247]"
+            imgLink="/assets/branch2.svg"
             title="Flexible"
-            text="Connect your marketing tools with built-in integrations"
+            description="Connect your marketing tools with built-in integrations"
           />
         </SwiperSlide>
-
-        <SwiperSlide className="w-card h-card">
+        <SwiperSlide className="w-[300px] h-96">
           <CardItem
-            primary={false}
-            branch="/assets/branch3.svg"
+            background="bg-white"
+            imgLink="/assets/branch3.svg"
             title="Easy Access"
-            text="Connect your marketing tools with built-in integrations"
+            description="Bring your design vision to life in clean, semantic HTML5"
           />
         </SwiperSlide>
       </Swiper>
-      <div className="swiper-pagination-bullet-active" slot="pagination"></div>
     </div>
   );
 };

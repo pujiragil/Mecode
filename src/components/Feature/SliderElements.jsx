@@ -24,12 +24,16 @@ const CardItem = ({ background, imgLink, title, description }) => {
 };
 
 export const CardWrapper = () => {
-  const [paginationEl, paginationRef] = useSwiperRef()
+  const [paginationEl, paginationRef] = useSwiperRef();
 
   return (
     <div className="flex flex-col overflow-hidden w-full gap-6 md:basis-full">
       <Swiper
         modules={[Pagination, Autoplay]}
+        className="w-full"
+        slidesPerView={1}
+        centeredSlides={true}
+        spaceBetween={40}
         pagination={{
           clickable: true,
           el: paginationEl,
@@ -37,9 +41,17 @@ export const CardWrapper = () => {
         autoplay={{
           delay: 3000,
         }}
-        slidesPerView="auto"
-        centeredSlides={true}
-        spaceBetween={40}
+        breakpoints={{
+          640: {
+            slidesPerView: "auto"
+          },
+          768: {
+            slidesPerView: "auto"
+          },
+          1024: {
+            slidesPerView: "auto"
+          }
+        }}
       >
         <SwiperSlide className="w-[300px]">
           <CardItem

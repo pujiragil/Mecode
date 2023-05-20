@@ -14,9 +14,9 @@ function App() {
       <HeroSection />
       <PlatformSection />
       <FeatureSection />
+      <CardSection />
       <div className="bg-white">
         <div className="container mx-auto">
-          <CardSection />
           <PriceSection />
           <FAQ />
         </div>

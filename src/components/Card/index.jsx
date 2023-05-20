@@ -1,10 +1,12 @@
-import React from "react";
 import Layout from "../Layout";
 import { Heading, Paragraph } from "../GlobalElements";
 
 const CardPrimary = () => {
   return (
-    <Layout bg="bg-white" padding={["px-5", "py-10", "md:px-6", "md:py-12"]}>
+    <Layout
+      bg="bg-white"
+      padding={["px-5", "py-10", "md:px-6", "md:py-12", "lg:py-20"]}
+    >
       <div className="grid place-items-center gap-20 lg:grid-cols-2">
         <div className="space-y-8 lg:order-2">
           <div className="space-y-5">
@@ -44,11 +46,19 @@ const CardPrimary = () => {
 
 const CardSecondary = () => {
   return (
-    <Layout bg="bg-white" padding={["px-5", "py-10", "md:px-6", "md:py-12"]}>
-      <div className="grid place-items-center gap-10 text-center md:text-left lg:grid-cols-2">
+    <Layout
+      bg="bg-white"
+      padding={["px-5", "py-10", "md:px-6", "md:py-12", "lg:py-20"]}
+    >
+      <div className="grid place-items-center gap-10 text-center md:text-left lg:grid-cols-2 lg:place-items-end ">
+        {/* content */}
         <div className="flex flex-col gap-10">
-          <Heading type="h2" text="Get up and running fast together" />
-          <div className="grid place-items-center divide-y divide-[#E4E4E4] py-10 md:grid-cols-2 md:place-items-center md:divide-x md:divide-y-0 md:divide-[#EAEAEA]">
+          <Heading
+            type="h2"
+            widths={["w-full", "md:w-3/4", "lg:w-full"]}
+            text="Get up and running fast together"
+          />
+          <div className="grid place-items-center divide-y divide-[#E4E4E4] py-10 md:w-3/4 md:grid-cols-2 md:place-items-start md:divide-x  md:divide-y-0 md:divide-[#EAEAEA] lg:w-full">
             <div className="flex w-2/3 flex-col items-center justify-center gap-10 py-10 md:w-full md:items-start md:py-0 md:pr-10">
               <img
                 className="h-10 w-10 object-contain"
@@ -79,7 +89,8 @@ const CardSecondary = () => {
             </div>
           </div>
         </div>
-        <div className="relative max-w-[400px] grid place-items-center p-6 before:absolute before:left-0 before:top-0 before:h-3/4 before:w-full before:rounded-xl before:bg-black">
+        {/* image */}
+        <div className="relative grid max-w-[400px] place-items-center p-6 before:absolute before:left-0 before:top-0 before:h-3/4 before:w-full before:rounded-xl before:bg-black lg:max-w-[400px] lg:max-w-[460px] lg:place-self-end">
           <div className="relative flex w-full justify-end overflow-hidden rounded-xl bg-[#DDF247] p-5">
             <div className="absolute left-6 top-6 space-y-3 text-left font-poppins font-bold">
               <p className="text-xl text-black/30">TUTORS</p>

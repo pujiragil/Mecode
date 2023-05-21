@@ -15,9 +15,9 @@ function App() {
       <PlatformSection />
       <FeatureSection />
       <CardSection />
+      <PriceSection />
       <div className="bg-white">
         <div className="container mx-auto">
-          <PriceSection />
           <FAQ />
         </div>
       </div>

@@ -1,16 +1,84 @@
-import { CardHeader, CardItem } from "./CardElements";
+import { CardHeader } from "./CardElements";
 import { cardOne, cardThree, cardTwo } from "../../data/card/cardObj";
+import Layout from "../Layout";
+
+const CardItem = ({ isPrimary, title, price, lists }) => {
+  return (
+    <div
+      className={`${
+        isPrimary
+          ? "bg-[#010101] text-white lg:h-[560px]"
+          : "bg-[#F4F4F4] text-black lg:h-[480px]"
+      } flex w-full max-w-[400px] flex-col justify-between gap-20 rounded-lg px-8 py-12 text-center sm:h-[500px] md:h-[560px]  md:w-3/5 md:max-w-[460px] lg:w-full lg:max-w-[380px]`}
+    >
+      <div className="space-y-9">
+        <h3 className="font-poppins text-xl md:text-2xl">{title}</h3>
+        <p className="flex justify-center gap-1 font-poppins text-4xl font-bold md:text-5xl">
+          <span className="text-base font-normal">$</span>
+          {price}
+        </p>
+        <div className="font-poppins md:text-lg">
+          {lists.map((list) => (
+            <p key={list}>{list}</p>
+          ))}
+        </div>
+      </div>
+      <button
+        className={`${
+          isPrimary ? "bg-[#DDF247] text-black" : "bg-white text-[#DDF247]"
+        } w-full rounded-lg border-none  py-4 font-poppins text-xl font-medium  outline-none`}
+      >
+        Buy Now
+      </button>
+    </div>
+  );
+};
 
 const PriceSection = () => {
   return (
-    <div className="px-4 mb-20 lg:mb-40">
-      <CardHeader />
-      <div className="flex flex-col lg:flex-row lg:gap-x-8 justify-center items-center">
-        <CardItem {...cardOne} />
-        <CardItem {...cardTwo} />
-        <CardItem {...cardThree} />
+    <Layout
+      bg="bg-white"
+      padding={["px-5", "py-10", "md:px-6", "md:py-12", "lg:py-20"]}
+    >
+      <div className="space-y-[124px]">
+        <CardHeader />
+        <div className="grid place-items-center gap-8 md:gap-12 lg:grid-cols-3 lg:gap-8">
+          <CardItem
+            isPrimary={false}
+            title="DEVELOPMENT"
+            price={10}
+            lists={["1 Module Javascript", "1 Module Human Resources"]}
+          />
+          <CardItem
+            isPrimary={true}
+            title="IT & SOFTWARE"
+            price={80}
+            lists={[
+              "1 Module Javascript",
+              "1 Module Human Resources",
+              "2 Module Sales Teams",
+              "Pack Marketing Skills",
+              "5 Module Study Case",
+            ]}
+          />
+          <CardItem
+            isPrimary={false}
+            title="BUSINESS"
+            price={30}
+            lists={[
+              "1 Module Javascript",
+              "1 Module Human Resources",
+              "2 Module Sales Teams",
+            ]}
+          />
+        </div>
+        {/* <div className="flex flex-col items-center justify-center lg:flex-row lg:gap-x-8">
+          <CardItem {...cardOne} />
+          <CardItem {...cardTwo} />
+          <CardItem {...cardThree} />
+        </div> */}
       </div>
-    </div>
+    </Layout>
   );
 };
 

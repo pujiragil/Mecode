@@ -1,13 +1,15 @@
-import { Heading } from "../GlobalElements";
+import { Heading, Paragraph } from "../GlobalElements";
 
 export const CardHeader = () => {
   return (
-    <div className="flex flex-col justify-center items-center text-center mb-24">
+    <div className="space-y-6 flex flex-col items-center justify-center text-center">
       <Heading type="h2" text="Choose your package" />
-      {/* <HeroTitle text="Choose your package" style="font-bold w-3/5 mb-6" /> */}
-      <p className="font-inter text-lg w-3/5">
-        We provide various types of packages just for you
-      </p>
+      <Paragraph
+        isPrimary={false}
+        widths={["w-10/12"]}
+        sizes={["text-base", "md:text-lg"]}
+        text="We provide various types of packages just for you"
+      />
     </div>
   );
 };
@@ -17,16 +19,16 @@ export const CardItem = ({ primary, style, title, price, modules }) => {
     <div
       className={`${
         primary ? "h-[488px] lg:h-[548px]" : "h-[425px] lg:h-[488px]"
-      } ${style} lg:w-[394px] relative font-inter flex flex-col justify-between items-center text-center px-8 py-12 rounded-lg sm:w-3/4 `}
+      } ${style} font-inter relative flex flex-col items-center justify-between rounded-lg px-8 py-12 text-center sm:w-3/4 lg:w-[394px] `}
     >
-      <h3 className="text-2xl mb-5 uppercase">{title}</h3>
-      <p className="text-4xl font-bold flex justify-start items-start gap-x-2 mb-10">
+      <h3 className="mb-5 text-2xl uppercase">{title}</h3>
+      <p className="mb-10 flex items-start justify-start gap-x-2 text-4xl font-bold">
         <span className="text-xl font-normal">$</span>
         {price}
       </p>
       <div className="mb-5">
         {modules.map((module, index) => (
-          <p className="text-lg mb-2" key={index}>
+          <p className="mb-2 text-lg" key={index}>
             {module}
           </p>
         ))}
@@ -34,13 +36,13 @@ export const CardItem = ({ primary, style, title, price, modules }) => {
       <button
         className={`${
           primary ? "bg-primary-card text-black" : "bg-white text-primary"
-        } font-bold text-lg w-full rounded-lg py-4`}
+        } w-full rounded-lg py-4 text-lg font-bold`}
       >
         Buy Now
       </button>
       {primary && (
         <img
-          className="absolute top-[100px] left-10 md:left-[100px] lg:top-36 lg:left-20 w-10"
+          className="absolute left-10 top-[100px] w-10 md:left-[100px] lg:left-20 lg:top-36"
           src="/assets/new.svg"
           alt="new"
         />

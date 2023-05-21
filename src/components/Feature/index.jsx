@@ -17,9 +17,8 @@ const FeatureSection = () => {
           />
           <Paragraph
             isPrimary={false}
-            sizes={["text-base"]}
+            sizes={["text-base", "md:text-lg"]}
             widths={["w-full"]}
-            weights={["font-extralight"]}
             text="We provide various special
             features for all of you"
           />

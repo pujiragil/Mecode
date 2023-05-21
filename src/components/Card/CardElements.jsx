@@ -11,7 +11,8 @@ const CardPrimaryContent = () => {
         />
         <Paragraph
           isPrimary={false}
-          widths={["w-full", "sm:w-4/5", "md:w-8/12", "lg:w-9/12"]}
+          sizes={["text-base", "md:text-lg"]}
+          widths={["w-full", "sm:w-4/5", "md:w-9/12", "lg:w-10/12"]}
           text="Go live on a fast, reliable, and hassle-free hosting network that scales with your business with one click and go code!"
         />
       </div>
@@ -50,7 +51,7 @@ const CardSecondaryContentItem = ({ imgLink, title, description }) => {
       />
       <div className="space-y-8">
         <Heading type="h3" text={title} />
-        <Paragraph isPrimary={false} text={description} />
+        <Paragraph isPrimary={false} sizes={["text-base", "md:text-lg"]} text={description} />
       </div>
     </div>
   );

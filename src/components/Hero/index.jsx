@@ -31,8 +31,8 @@ const HeroText = () => {
         />
         <Paragraph
           isPrimary={true}
-          sizes={["text-xs", "md:text-base"]}
-          widths={["w-full", "md:w-8/12", "lg:w-3/4"]}
+          sizes={["text-base", "md:text-lg"]}
+          widths={["w-full", "md:w-8/12", "lg:w-10/12"]}
           text="Create, launch, and iterate on new marketing campaigns without distracting your product team."
         />
       </div>

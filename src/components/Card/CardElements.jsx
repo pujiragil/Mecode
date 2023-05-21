@@ -51,7 +51,11 @@ const CardSecondaryContentItem = ({ imgLink, title, description }) => {
       />
       <div className="space-y-8">
         <Heading type="h3" text={title} />
-        <Paragraph isPrimary={false} sizes={["text-base", "md:text-lg"]} text={description} />
+        <Paragraph
+          isPrimary={false}
+          sizes={["text-base", "md:text-lg"]}
+          text={description}
+        />
       </div>
     </div>
   );
@@ -74,7 +78,7 @@ const CardSecondaryContent = ({ children }) => {
 
 const CardSecondaryImage = () => {
   return (
-    <div className="relative grid max-w-[400px] place-items-center p-6 before:absolute before:left-0 before:top-0 before:h-3/4 before:w-full before:rounded-xl before:bg-black lg:max-w-[400px] lg:max-w-[460px] lg:place-self-end">
+    <div className="relative grid max-w-[400px] place-items-center p-6 before:absolute before:left-0 before:top-0 before:h-3/4 before:w-full before:rounded-xl before:bg-black md:max-w-[460px] lg:place-self-end">
       <div className="relative flex w-full justify-end overflow-hidden rounded-xl bg-[#DDF247] p-5">
         <div className="absolute left-6 top-6 space-y-3 text-left font-poppins font-bold">
           <p className="text-xl text-black/30">TUTORS</p>

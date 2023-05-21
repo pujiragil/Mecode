@@ -1,6 +1,19 @@
-import { CardHeader } from "./CardElements";
-import { cardOne, cardThree, cardTwo } from "../../data/card/cardObj";
+import { Heading, Paragraph } from "../GlobalElements";
 import Layout from "../Layout";
+
+const CardHeader = () => {
+  return (
+    <div className="flex flex-col items-center justify-center space-y-6 text-center">
+      <Heading type="h2" text="Choose your package" />
+      <Paragraph
+        isPrimary={false}
+        widths={["w-10/12"]}
+        sizes={["text-base", "md:text-lg"]}
+        text="We provide various types of packages just for you"
+      />
+    </div>
+  );
+};
 
 const CardItem = ({ isPrimary, title, price, lists }) => {
   return (
@@ -9,7 +22,7 @@ const CardItem = ({ isPrimary, title, price, lists }) => {
         isPrimary
           ? "bg-[#010101] text-white lg:h-[560px]"
           : "bg-[#F4F4F4] text-black lg:h-[480px]"
-      } flex w-full max-w-[400px] flex-col justify-between gap-20 rounded-lg px-8 py-12 text-center sm:h-[500px] md:h-[560px]  md:w-3/5 md:max-w-[460px] lg:w-full lg:max-w-[380px]`}
+      } flex w-full max-w-[400px] flex-col justify-between gap-20 rounded-lg px-8 py-12 text-center sm:h-[500px] md:h-[560px]  md:w-3/5 md:max-w-[460px] lg:w-full`}
     >
       <div className="space-y-9">
         <h3 className="font-poppins text-xl md:text-2xl">{title}</h3>
@@ -40,9 +53,9 @@ const PriceSection = () => {
       bg="bg-white"
       padding={["px-5", "py-10", "md:px-6", "md:py-12", "lg:py-20"]}
     >
-      <div className="space-y-[124px]">
+      <div className="flex flex-col items-center gap-24">
         <CardHeader />
-        <div className="grid place-items-center gap-8 md:gap-12 lg:grid-cols-3 lg:gap-8">
+        <div className="grid place-items-center gap-8 md:gap-12 lg:w-11/12 lg:grid-cols-3 lg:gap-8">
           <CardItem
             isPrimary={false}
             title="DEVELOPMENT"
@@ -72,11 +85,6 @@ const PriceSection = () => {
             ]}
           />
         </div>
-        {/* <div className="flex flex-col items-center justify-center lg:flex-row lg:gap-x-8">
-          <CardItem {...cardOne} />
-          <CardItem {...cardTwo} />
-          <CardItem {...cardThree} />
-        </div> */}
       </div>
     </Layout>
   );

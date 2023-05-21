@@ -22,7 +22,7 @@ const CardItem = ({ isPrimary, title, price, lists }) => {
         isPrimary
           ? "bg-[#010101] text-white lg:h-[560px]"
           : "bg-[#F4F4F4] text-black lg:h-[480px]"
-      } flex w-full max-w-[400px] flex-col justify-between gap-20 rounded-lg px-8 py-12 text-center sm:h-[500px] md:h-[560px]  md:w-3/5 md:max-w-[460px] lg:w-full`}
+      } flex w-full max-w-[400px] flex-col justify-between gap-20 rounded-lg px-8 py-12 text-center sm:h-[500px] md:h-[560px] md:w-3/4 lg:w-full`}
     >
       <div className="space-y-9">
         <h3 className="font-poppins text-xl md:text-2xl">{title}</h3>
@@ -55,7 +55,7 @@ const PriceSection = () => {
     >
       <div className="flex flex-col items-center gap-24">
         <CardHeader />
-        <div className="grid place-items-center gap-8 md:gap-12 lg:w-11/12 lg:grid-cols-3 lg:gap-8">
+        <div className="grid w-full place-items-center gap-8 md:gap-12 lg:w-11/12 lg:grid-cols-3 lg:gap-8">
           <CardItem
             isPrimary={false}
             title="DEVELOPMENT"

@@ -66,7 +66,7 @@ export const Paragraph = ({ isPrimary, sizes, weights, widths, text }) => {
         sizes,
         weights,
         widths
-      )} leading-5 text-black`}
+      )} leading-5 text-black overflow-hidden`}
     >
       {text}
     </p>

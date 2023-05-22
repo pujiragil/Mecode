@@ -42,7 +42,9 @@ export const Heading = ({ type, text, widths }) => {
           className={`font-poppins text-xl font-medium tracking-[0.25px] text-black md:text-3xl md:font-bold ${
             widths?.length ? widths?.join(" ") : ""
           }`}
-        ></h4>
+        >
+          {text}
+        </h4>
       );
     }
   }

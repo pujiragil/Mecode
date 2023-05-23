@@ -1,16 +1,47 @@
-import { FaMinus, FaPlus } from "react-icons/fa";
-import { useState } from "react";
-import { Heading } from "../GlobalElements";
+import { Heading, Paragraph } from "../GlobalElements";
+import { useFaqCardContext } from "../../contexts/FaqCardContext";
 
-export const FaqWrapper = () => {
+function FaqTitle() {
+  const data = useFaqCardContext();
+  return <Heading type="h4" text={data.title} />;
+}
+
+function FaqDescription() {
+  const data = useFaqCardContext();
   return (
-    <div>
-      <Heading type="h2" text="FAQs" />
-      <FaqSection text={"01. Can I Find the right information faster?"} />
-      <FaqSection text={"02. How to share feature demos and ideas?"} />
-      <FaqSection text={"03. How to get insights from users?"} />
-      <FaqSection text={"04. Can I develop my website without code?"} />
+    <div
+      className={`${
+        data.isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+      } grid transition-all duration-200 ease-in`}
+    >
+      <Paragraph
+        isPrimary={false}
+        widths={["w-full", "md:w-2/3"]}
+        text={data.description}
+      />
     </div>
   );
-};
+}
 
+function FaqButton({ onClick }) {
+  const data = useFaqCardContext();
+  console.log(data);
+  const handleOpen = () => {
+    onClick(data.id);
+  };
+
+  return (
+    <button
+      onClick={handleOpen}
+      className={`flex h-8 w-8 items-center justify-center rounded-full font-poppins text-2xl font-medium transition-all duration-300 ease-in md:h-12 md:w-12 md:text-4xl ${
+        data.isOpen
+          ? "rotate-0 bg-[#DDF247] text-black"
+          : "rotate-90 border border-black text-[#DDF247]"
+      }`}
+    >
+      {data.isOpen ? "-" : "+"}
+    </button>
+  );
+}
+
+export { FaqTitle, FaqDescription, FaqButton };

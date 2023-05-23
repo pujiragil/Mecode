@@ -10,7 +10,7 @@ import useSwiperRef from "../../hooks/swiper";
 const CardItem = ({ background, imgLink, title, description }) => {
   return (
     <section
-      className={`p-8 pb-12 flex flex-col rounded-xl gap-28 h-full ${background}`}
+      className={`p-8 pb-12 flex flex-col rounded-xl gap-28 h-full min-h-[378px] ${background}`}
     >
       <div className="w-20 h-20 flex justify-center items-center bg-white rounded-xl">
         <img className="w-10 h-10 object-contain" src={imgLink} alt="branch" />

@@ -25,7 +25,7 @@ function FaqDescription() {
 
 function FaqButton({ onClick }) {
   const data = useFaqCardContext();
-  console.log(data);
+
   const handleOpen = () => {
     onClick(data.id);
   };

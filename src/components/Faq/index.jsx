@@ -22,7 +22,7 @@ function FaqCard({ title, description, button, data, index }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [index, inView]);
+  }, [inView]);
 
   return (
     <FaqCardContext.Provider value={data}>

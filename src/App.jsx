@@ -63,8 +63,8 @@ const data = {
 function FAQSection() {
   const [selectedAccordion, setSelectedAccordion] = useState("");
 
-  const { ref: sectioRef, inView: isSectionInView } = useInView({
-    threshold: 0.5,
+  const { ref: headingRef, inView } = useInView({
+    threshold: 0,
     triggerOnce: true,
   });
 
@@ -83,12 +83,20 @@ function FAQSection() {
       bg="bg-white"
       padding={["px-5", "py-10", "md:px-6", "md:py-12", "lg:py-20"]}
     >
-      <div ref={sectioRef} className={`relative space-y-14 text-center duration-[1s] ease-in-out ${isSectionInView ? "bottom-0 opacity-100" : "-bottom-40 opacity-0"}`}>
-        <Heading type="h2" text={data.title} />
+      <div className="space-y-14 text-center duration-[1s] ease-in-out">
+        <div
+          ref={headingRef}
+          className={`${
+            inView ? "bottom-0 opacity-100" : "-bottom-20 opacity-0"
+          } relative transition-all duration-500 ease-in`}
+        >
+          <Heading type="h2" text={data.title} />
+        </div>
         <div className="grid divide-y divide-[#E4E4E4] text-left">
-          {data.lists.map((list) => (
+          {data.lists.map((list, index) => (
             <FaqCard
               key={list.id}
+              index={index + 1}
               data={{ ...list, isOpen: selectedAccordion === list.id }}
               title={<FaqCard.Title />}
               description={<FaqCard.Description />}

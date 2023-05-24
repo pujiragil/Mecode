@@ -1,10 +1,10 @@
-export default function Layout({ bg, padding, children }) {
+export default function Layout({ bg, padding, styles, children }) {
   return (
     <section className={bg}>
       <div
-        className={`${
-          padding?.length ? padding.join(" ") : null
-        } container mx-auto overflow-hidden`}
+        className={`${padding?.length ? padding.join(" ") : null} ${
+          styles ? styles : ""
+        } container mx-auto`}
       >
         {children}
       </div>

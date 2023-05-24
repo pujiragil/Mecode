@@ -81,6 +81,7 @@ function FAQSection() {
   return (
     <Layout
       bg="bg-white"
+      styles="overflow-hidden"
       padding={["px-5", "py-10", "md:px-6", "md:py-12", "lg:py-20"]}
     >
       <div className="space-y-14 text-center duration-[1s] ease-in-out">

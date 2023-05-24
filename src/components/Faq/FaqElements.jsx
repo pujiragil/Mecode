@@ -11,7 +11,7 @@ function FaqDescription() {
   return (
     <div
       className={`${
-        data.isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        data.isOpen ? "accordion is-open" : "accordion"
       } grid transition-all duration-200 ease-in`}
     >
       <Paragraph

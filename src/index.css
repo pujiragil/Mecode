@@ -15,3 +15,14 @@
    background: #DDF247;
    width: 80px;
 }
+
+.accordion {
+   display: grid;
+   grid-template-rows: 0fr;
+   transition: grid-template-rows 0.5s ease-out;
+ }
+ 
+ .accordion.is-open {
+   grid-template-rows: 1fr;
+ }
+ 

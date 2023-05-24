@@ -29,7 +29,7 @@ function FaqCard({ title, description, button, data, index }) {
       <div
         ref={ref}
         className={`${
-          isVisible ? "bottom-0 opacity-100" : "-bottom-20 opacity-0"
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
         } relative grid grid-cols-[1fr_32px] place-items-start py-10 transition-all duration-500 ease-in first:pt-0 last:pb-0 md:grid-cols-[1fr_48px]`}
       >
         <div className="space-y-4">

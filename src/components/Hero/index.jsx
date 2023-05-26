@@ -19,8 +19,19 @@ const HeroButton = () => {
   );
 };
 const HeroText = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="space-y-6">
+    <motion.div
+      ref={ref}
+      style={{
+        transform: isInView ? "none" : "translateX(-200px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
+      className="space-y-6"
+    >
       <div className="space-y-4">
         <Heading
           type="h1"
@@ -40,20 +51,20 @@ const HeroText = () => {
         />
       </div>
       <HeroButton />
-    </div>
+    </motion.div>
   );
 };
 
 const PersonImage = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, amount: 0.25 });
 
   return (
     <motion.img
       ref={ref}
       className={`${
         isInView ? "translate-x-0 opacity-100" : "translate-x-40 opacity-0"
-      } absolute bottom-0 right-0 z-[3] h-auto w-4/5 max-w-[300px] transition-all duration-500 ease-in sm:max-w-[350px] md:max-w-[370px]`}
+      } absolute bottom-0 right-0 z-[3] h-auto w-4/5 max-w-[300px] transition-all duration-700 ease-in sm:max-w-[350px] md:max-w-[370px]`}
       src="/assets/person.webp"
       alt="person"
     />
@@ -62,7 +73,7 @@ const PersonImage = () => {
 
 const CodeImage = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, amount: 0.25 });
 
   return (
     <motion.img
@@ -70,8 +81,8 @@ const CodeImage = () => {
       className={`${
         isInView
           ? "translate-y-0 opacity-100 delay-300"
-          : "translate-y-[200px] opacity-0"
-      } absolute bottom-10 left-0 z-[2] h-auto w-11/12 transition-all duration-300 ease-in sm:w-8/12 md:w-8/12 lg:-left-36 lg:bottom-0 lg:w-full lg:max-w-[600px]`}
+          : "translate-y-[200px] opacity-0 "
+      } absolute bottom-10 left-0 z-[2] h-auto w-11/12 transition-all duration-500 ease-in sm:w-8/12 md:w-8/12 lg:-left-36 lg:bottom-0 lg:w-full lg:max-w-[600px]`}
       src="/assets/code.webp"
       alt="code"
     />

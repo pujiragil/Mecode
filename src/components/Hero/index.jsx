@@ -60,6 +60,24 @@ const PersonImage = () => {
   );
 };
 
+const CodeImage = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  return (
+    <motion.img
+      ref={ref}
+      className={`${
+        isInView
+          ? "translate-y-0 opacity-100 delay-300"
+          : "translate-y-[200px] opacity-0"
+      } absolute bottom-10 left-0 z-[2] h-auto w-11/12 transition-all duration-300 ease-in sm:w-8/12 md:w-8/12 lg:-left-36 lg:bottom-0 lg:w-full lg:max-w-[600px]`}
+      src="/assets/code.webp"
+      alt="code"
+    />
+  );
+};
+
 const HeroImage = () => {
   return (
     <div className="relative lg:after:absolute lg:after:left-0 lg:after:top-0 lg:after:h-full lg:after:w-[50vw] lg:after:bg-black">
@@ -71,11 +89,7 @@ const HeroImage = () => {
           alt="yellow"
         />
       </div>
-      <img
-        className="absolute bottom-10 left-0 z-[2] h-auto w-11/12 sm:w-8/12 md:w-8/12 lg:-left-36 lg:bottom-0 lg:w-full lg:max-w-[600px]"
-        src="/assets/code.webp"
-        alt="code"
-      />
+      <CodeImage />
     </div>
   );
 };

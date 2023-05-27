@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 import content from "../../data/content.json";
 import { Heading, Paragraph } from "../GlobalElements";
@@ -23,7 +23,7 @@ const HeroText = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <motion.div
+    <div
       ref={ref}
       className={`${
         isInView
@@ -50,7 +50,7 @@ const HeroText = () => {
         />
       </div>
       <HeroButton />
-    </motion.div>
+    </div>
   );
 };
 
@@ -59,7 +59,7 @@ const PersonImage = () => {
   const isInView = useInView(ref, { once: true, amount: 0.25 });
 
   return (
-    <motion.img
+    <img
       ref={ref}
       className={`${
         isInView ? "translate-x-0 opacity-100" : "translate-x-40 opacity-0"
@@ -75,7 +75,7 @@ const CodeImage = () => {
   const isInView = useInView(ref, { once: true, amount: 0.25 });
 
   return (
-    <motion.img
+    <img
       ref={ref}
       className={`${
         isInView

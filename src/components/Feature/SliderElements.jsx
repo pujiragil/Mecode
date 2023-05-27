@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import {  useInView } from "framer-motion";
 
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,7 +32,7 @@ export const SliderWrapper = () => {
   const [paginationEl, paginationRef] = useSwiperRef();
 
   return (
-    <motion.div
+    <div
       ref={ref}
       style={{
         transform: isInView ? "none" : "translateX(200px)",
@@ -81,6 +81,6 @@ export const SliderWrapper = () => {
         </SwiperSlide>
       </Swiper>
       <div className="flex justify-center gap-4" ref={paginationRef}></div>
-    </motion.div>
+    </div>
   );
 };

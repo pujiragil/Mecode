@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 import Layout from "../Layout";
 
@@ -36,7 +36,7 @@ const PlatformImage = (props) => {
   const delayMs = `${props.idx * 200}ms`;
 
   return (
-    <motion.img
+    <img
       ref={ref}
       src={props.src}
       alt={props.alt}
@@ -45,7 +45,9 @@ const PlatformImage = (props) => {
       loading={props.isLazy ? "lazy" : "eager"}
       style={{ transitionDelay: delayMs }}
       className={`${
-        isInView ? "translate-y-0 opacity-100" : "translate-y-4 md:translate-y-8 opacity-0"
+        isInView
+          ? "translate-y-0 opacity-100"
+          : "translate-y-4 opacity-0 md:translate-y-8"
       } h-auto w-full transition-all duration-500 ease-in sm:w-full sm:max-w-[10rem] md:max-w-[11rem] lg:max-w-[12rem]`}
     />
   );

@@ -1,3 +1,5 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Heading, Paragraph } from "../GlobalElements";
 
 const CardPrimaryContent = () => {
@@ -41,9 +43,20 @@ const CardPrimaryImage = () => {
   );
 };
 
-const CardSecondaryContentItem = ({ imgLink, title, description }) => {
+const CardSecondaryContentItem = ({ imgLink, title, description, idx }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5, once: true });
+
   return (
-    <div className="flex w-2/3 flex-col items-center justify-center gap-10 py-10 md:w-full md:items-start md:py-0 md:first:pr-10 md:last:pl-10">
+    <div
+      ref={ref}
+      style={{
+        transitionDelay: `${idx * 340}ms`,
+      }}
+      className={`${
+        isInView ? "translate-y-0 opacity-100" : "translate-y-[100px] opacity-0"
+      } flex w-2/3 flex-col items-center justify-center gap-10 py-10 transition-all duration-500 ease-in-out md:w-full md:items-start md:py-0 md:first:pr-10 md:last:pl-10`}
+    >
       <img
         className="h-10 w-10 object-contain"
         src={imgLink}
@@ -62,13 +75,25 @@ const CardSecondaryContentItem = ({ imgLink, title, description }) => {
 };
 
 const CardSecondaryContent = ({ children }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5 });
+
   return (
     <div className="flex flex-col gap-10">
-      <Heading
-        type="h2"
-        widths={["w-full", "md:w-3/4", "lg:w-full"]}
-        text="Get up and running fast together"
-      />
+      <div
+        ref={ref}
+        className={`${
+          isInView
+            ? "translate-y-0 opacity-100"
+            : "translate-y-[100px] opacity-0"
+        } transition-all delay-200 duration-500 ease-in-out`}
+      >
+        <Heading
+          type="h2"
+          widths={["w-full", "md:w-3/4", "lg:w-full"]}
+          text="Get up and running fast together"
+        />
+      </div>
       <div className="grid place-items-center divide-y divide-[#E4E4E4] py-10 md:w-3/4 md:grid-cols-2 md:place-items-start md:divide-x  md:divide-y-0 md:divide-[#EAEAEA] lg:w-full">
         {children}
       </div>

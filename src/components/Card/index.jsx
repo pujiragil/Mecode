@@ -21,6 +21,23 @@ const CardPrimary = () => {
   );
 };
 
+const cardDatas = [
+  {
+    id: "university",
+    imgLink: "/assets/university.svg",
+    title: "University",
+    description:
+      "Browse hundreds of in-depth videos, courses, and guides to get up and running fast",
+  },
+  {
+    id: "showcase",
+    imgLink: "/assets/showcase.svg",
+    title: "Showcase",
+    description:
+      "Get inspired by the incredible websites built by members of the community",
+  },
+];
+
 const CardSecondary = () => {
   return (
     <Layout
@@ -29,16 +46,9 @@ const CardSecondary = () => {
     >
       <div className="grid place-items-center gap-10 text-center md:text-left lg:grid-cols-2 lg:place-items-end ">
         <CardSecondaryContent>
-          <CardSecondaryContentItem
-            imgLink="/assets/university.svg"
-            title="University"
-            description="Browse hundreds of in-depth videos, courses, and guides to get up and running fast"
-          />
-          <CardSecondaryContentItem
-            imgLink="/assets/showcase.svg"
-            title="Showcase"
-            description="Get inspired by the incredible websites built by members of the community"
-          />
+          {cardDatas.map((data, index) => (
+            <CardSecondaryContentItem key={data.id} idx={index + 1} {...data} />
+          ))}
         </CardSecondaryContent>
         <CardSecondaryImage />
       </div>

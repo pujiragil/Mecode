@@ -1,8 +1,8 @@
 import { useRef } from "react";
+import { useInView, motion } from "framer-motion";
 import { Heading, Paragraph } from "../GlobalElements";
 import Layout from "../Layout";
-import { CardWrapper } from "./SliderElements";
-import { useInView } from "framer-motion";
+import { SliderWrapper } from "./SliderElements";
 
 const FeatureSection = () => {
   const ref = useRef(null);
@@ -13,8 +13,8 @@ const FeatureSection = () => {
       bg="bg-[#FAFAFA]"
       padding={["px-5", "py-10", "md:px-6", "md:py-12"]}
     >
-      <div className="flex w-full flex-col gap-8 md:flex-row md:items-center">
-        <div
+      <div className="flex w-full flex-col gap-8 overflow-hidden md:flex-row md:items-center">
+        <motion.div
           ref={ref}
           style={{
             transform: isInView ? "none" : "translateX(-200px)",
@@ -40,8 +40,8 @@ const FeatureSection = () => {
             src="/assets/arrow.svg"
             alt="arrow"
           />
-        </div>
-        <CardWrapper />
+        </motion.div>
+        <SliderWrapper />
       </div>
     </Layout>
   );

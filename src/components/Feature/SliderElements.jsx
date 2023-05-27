@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Heading, Paragraph } from "../GlobalElements";
@@ -10,10 +13,10 @@ import useSwiperRef from "../../hooks/swiper";
 const CardItem = ({ background, imgLink, title, description }) => {
   return (
     <section
-      className={`p-8 pb-12 flex flex-col rounded-xl gap-28 h-full min-h-[378px] ${background}`}
+      className={`flex h-full min-h-[378px] flex-col gap-28 rounded-xl p-8 pb-12 ${background}`}
     >
-      <div className="w-20 h-20 flex justify-center items-center bg-white rounded-xl">
-        <img className="w-10 h-10 object-contain" src={imgLink} alt="branch" />
+      <div className="flex h-20 w-20 items-center justify-center rounded-xl bg-white">
+        <img className="h-10 w-10 object-contain" src={imgLink} alt="branch" />
       </div>
       <div className="space-y-3.5">
         <Heading type="h3" text={title} />
@@ -23,11 +26,21 @@ const CardItem = ({ background, imgLink, title, description }) => {
   );
 };
 
-export const CardWrapper = () => {
+export const SliderWrapper = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-100px"});
   const [paginationEl, paginationRef] = useSwiperRef();
 
   return (
-    <div className="flex flex-col overflow-hidden w-full gap-6 md:basis-full">
+    <motion.div
+      ref={ref}
+      style={{
+        transform: isInView ? "none" : "translateX(200px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
+      className="flex w-full flex-col gap-6 overflow-hidden md:basis-full"
+    >
       <Swiper
         modules={[Pagination, Autoplay]}
         className="w-full"
@@ -68,6 +81,6 @@ export const CardWrapper = () => {
         </SwiperSlide>
       </Swiper>
       <div className="flex justify-center gap-4" ref={paginationRef}></div>
-    </div>
+    </motion.div>
   );
 };

@@ -28,7 +28,7 @@ const CardItem = ({ background, imgLink, title, description }) => {
 
 export const SliderWrapper = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-100px", once: true });
+  const isInView = useInView(ref, { margin: "-150px", once: true });
   const [paginationEl, paginationRef] = useSwiperRef();
 
   return (

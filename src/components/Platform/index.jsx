@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
 import Layout from "../Layout";
 
 const platforms = [
@@ -27,15 +30,23 @@ const platforms = [
   },
 ];
 
-const PlatformImage = ({ src, alt, width, height, isLazy }) => {
+const PlatformImage = (props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5, once: true });
+  const delayMs = `${props.idx * 200}ms`;
+
   return (
-    <img
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      loading={isLazy ? "lazy" : "eager"}
-      className="w-full h-auto sm:w-full sm:max-w-[10rem] md:max-w-[11rem] lg:max-w-[12rem]"
+    <motion.img
+      ref={ref}
+      src={props.src}
+      alt={props.alt}
+      width={props.width}
+      height={props.height}
+      loading={props.isLazy ? "lazy" : "eager"}
+      style={{ transitionDelay: delayMs }}
+      className={`${
+        isInView ? "translate-y-0 opacity-100" : "translate-y-4 md:translate-y-8 opacity-0"
+      } h-auto w-full transition-all duration-500 ease-in sm:w-full sm:max-w-[10rem] md:max-w-[11rem] lg:max-w-[12rem]`}
     />
   );
 };
@@ -43,29 +54,23 @@ const PlatformImage = ({ src, alt, width, height, isLazy }) => {
 const Triangle = () => {
   return (
     <img
-      className="absolute z-10 w-32 -top-28 right-0 sm:w-40 sm:-top-32 lg:-top-36 lg:w-44"
+      className="absolute -top-28 right-0 z-10 w-32 sm:-top-32 sm:w-40 lg:-top-36 lg:w-44"
       src="/assets/triangle.svg"
       alt="triangle"
     />
   );
 };
 
-
 const PlatformSection = () => {
   return (
-    <Layout bg="bg-white" padding={["px-5", "py-10","md:px-6", "md:py-12"]}>
-      <div className="relative grid grid-cols-3 place-items-center gap-14">
+    <Layout bg="bg-white" padding={["px-5", "py-10", "md:px-6", "md:py-12"]}>
+      <div className="relative">
         <Triangle />
-        {platforms.map((platform) => (
-          <PlatformImage
-            key={platform.id}
-            src={platform.src}
-            alt={platform.alt}
-            width={platform.width}
-            height={platform.height}
-            isLazy={platform.isLazy}
-          />
-        ))}
+        <div className="grid grid-cols-3 place-items-center gap-14 overflow-hidden">
+          {platforms.map((platform, index) => (
+            <PlatformImage key={platform.id} idx={index + 1} {...platform} />
+          ))}
+        </div>
       </div>
     </Layout>
   );

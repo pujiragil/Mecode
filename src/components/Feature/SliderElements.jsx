@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import {  useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -28,7 +28,7 @@ const CardItem = ({ background, imgLink, title, description }) => {
 
 export const SliderWrapper = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-150px", once: true });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [paginationEl, paginationRef] = useSwiperRef();
 
   return (

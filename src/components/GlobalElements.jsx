@@ -44,28 +44,24 @@ export const Heading = forwardRef(({ type, text, widths, animate }, ref) => {
   });
 });
 
-export const Paragraph = ({ isPrimary, sizes, weights, widths, text }) => {
-  const generateClassname = (isPrimary, sizes, weights, widths) => {
-    const selectedFont = isPrimary ? "font-source" : "font-poppins";
-    const fontSize = sizes?.length ? sizes.join(" ") : null;
-    const fontWeight = weights?.length ? weights.join(" ") : null;
-    const textWidth = widths?.length ? widths.join(" ") : null;
-    return [selectedFont, fontSize, fontWeight, textWidth].join(" ");
+export const Paragraph = forwardRef((props, ref) => {
+  const generateClassName = ({ isPrimary, sizes, weights, widths }) => {
+    let selectedFont, fontSize, fontWeight, textWidth, based;
+    selectedFont = isPrimary ? "font-source" : "font-poppins";
+    fontSize = sizes?.length ? sizes.join(" ") : null;
+    fontWeight = weights?.length ? weights.join(" ") : null;
+    textWidth = widths?.length ? widths.join(" ") : null;
+    based = "overflow-hidden leading-5 text-black";
+    return [selectedFont, fontSize, fontWeight, textWidth, based].join(" ");
   };
+  const className = generateClassName(props);
 
-  return (
-    <p
-      className={`${generateClassname(
-        isPrimary,
-        sizes,
-        weights,
-        widths
-      )} overflow-hidden leading-5 text-black`}
-    >
-      {text}
-    </p>
-  );
-};
+  return React.createElement("p", {
+    ref,
+    className,
+    children: props?.text,
+  });
+});
 
 export const Button = ({ text, style, icon }) => {
   return (

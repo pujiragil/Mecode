@@ -45,15 +45,22 @@ export const Heading = forwardRef(({ type, text, widths, animate }, ref) => {
 });
 
 export const Paragraph = forwardRef((props, ref) => {
-  const generateClassName = ({ isPrimary, sizes, weights, widths }) => {
-    let selectedFont, fontSize, fontWeight, textWidth, based;
-    selectedFont = isPrimary ? "font-source" : "font-poppins";
-    fontSize = sizes?.length ? sizes.join(" ") : null;
-    fontWeight = weights?.length ? weights.join(" ") : null;
-    textWidth = widths?.length ? widths.join(" ") : null;
-    based = "overflow-hidden leading-5 text-black";
-    return [selectedFont, fontSize, fontWeight, textWidth, based].join(" ");
+  const generateFontStyle = ({ isPrimary, sizes, weights }) => {
+    let fontStyle = "";
+    fontStyle += isPrimary ? "font-source " : "font-poppins ";
+    fontStyle += sizes?.length && sizes.join(" ");
+    fontStyle += weights?.length && weights.join(" ");
+    return fontStyle;
   };
+
+  const generateClassName = (props) => {
+    let fontStyle, textWidth, basedClass;
+    fontStyle = generateFontStyle(props);
+    textWidth = props?.widths?.length ? props.widths.join(" ") : null;
+    basedClass = "overflow-hidden leading-5 text-black";
+    return [fontStyle, textWidth, basedClass].join(" ");
+  };
+
   const className = generateClassName(props);
 
   return React.createElement("p", {

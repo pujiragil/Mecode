@@ -1,54 +1,46 @@
-export const Heading = ({ type, text, widths }) => {
+import React, { forwardRef } from "react";
+
+export const Heading = forwardRef(({ type, text, widths, animate }, ref) => {
+  let fontStyle;
+
   switch (type) {
     case "h1": {
-      return (
-        <h1
-          className={`font-source text-[34px] font-medium leading-10 text-black md:text-6xl md:leading-[75px] ${
-            widths?.length ? widths.join(" ") : ""
-          }`}
-        >
-          {text}
-        </h1>
-      );
+      fontStyle =
+        "font-source text-[34px] font-medium leading-10 text-black md:text-6xl md:leading-[75px]";
+      break;
     }
 
     case "h2": {
-      return (
-        <h2
-          className={`font-poppins text-[34px] font-bold leading-10 tracking-[0.25px] text-black md:text-5xl md:leading-normal ${
-            widths?.length ? widths.join(" ") : ""
-          }`}
-        >
-          {text}
-        </h2>
-      );
+      fontStyle =
+        "font-poppins text-[34px] font-bold leading-10 tracking-[0.25px] text-black md:text-5xl md:leading-normal";
+      break;
     }
 
     case "h3": {
-      return (
-        <h3
-          className={`font-poppins text-2xl font-bold tracking-[0.25px] text-black md:text-[34px] ${
-            widths?.length ? widths.join(" ") : ""
-          }`}
-        >
-          {text}
-        </h3>
-      );
+      fontStyle =
+        "font-poppins text-2xl font-bold tracking-[0.25px] text-black md:text-[34px]";
+      break;
     }
 
     case "h4": {
-      return (
-        <h4
-          className={`font-poppins text-xl font-medium tracking-[0.25px] text-black md:text-3xl md:font-bold ${
-            widths?.length ? widths?.join(" ") : ""
-          }`}
-        >
-          {text}
-        </h4>
-      );
+      fontStyle =
+        "font-poppins text-xl font-medium tracking-[0.25px] text-black md:text-3xl md:font-bold";
+      break;
+    }
+
+    default: {
+      throw Error("Wrong type of Heading Component");
     }
   }
-};
+
+  const className = `${fontStyle} ${widths?.length ? widths?.join(" ") : ""}`;
+
+  return React.createElement(type, {
+    ref,
+    className,
+    children: text,
+  });
+});
 
 export const Paragraph = ({ isPrimary, sizes, weights, widths, text }) => {
   const generateClassname = (isPrimary, sizes, weights, widths) => {
@@ -66,7 +58,7 @@ export const Paragraph = ({ isPrimary, sizes, weights, widths, text }) => {
         sizes,
         weights,
         widths
-      )} leading-5 text-black overflow-hidden`}
+      )} overflow-hidden leading-5 text-black`}
     >
       {text}
     </p>

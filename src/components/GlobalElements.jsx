@@ -33,7 +33,9 @@ export const Heading = forwardRef(({ type, text, widths, animate }, ref) => {
     }
   }
 
-  const className = `${fontStyle} ${widths?.length ? widths?.join(" ") : ""}`;
+  const className = `${fontStyle} ${
+    widths?.length ? widths?.join(" ") : ""
+  } ${animate}`;
 
   return React.createElement(type, {
     ref,

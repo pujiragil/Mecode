@@ -22,19 +22,29 @@ const HeroText = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
+  const headRef = useRef(null);
+  const isHeadInView = useInView(headRef);
+
   return (
     <div
       ref={ref}
-      className={`${
-        isInView
-          ? "translate-x-0 opacity-100"
-          : "-translate-x-[200px] opacity-0"
-      } space-y-6 transition-all duration-700 ease-in-out`}
+      className="space-y-6"
+      // className={`${
+      //   isInView
+      //     ? "translate-x-0 opacity-100"
+      //     : "-translate-x-[200px] opacity-0"
+      // } space-y-6 transition-all duration-700 ease-in-out`}
     >
       <div className="space-y-4">
         <Heading
+          ref={headRef}
           type="h1"
           widths={["w-full"]}
+          animate={`${
+            isHeadInView
+              ? "translate-y-0 opacity-100 transition-all duration-700 ease-in-out"
+              : "translate-y-20 opacity-0"
+          }`}
           text="Improve your skills by study with coding"
         />
         <img

@@ -7,8 +7,16 @@ import Navbar from "../Navbar";
 import { useRef } from "react";
 
 const HeroButton = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   return (
-    <button className="flex items-center gap-3 rounded bg-black px-6 py-3 font-poppins font-semibold text-white md:text-xl">
+    <button
+      ref={ref}
+      className={`${
+        isInView ? "slide-in-y delay-300" : "slide-out-y"
+      } flex items-center gap-3 rounded bg-black px-6 py-3 font-poppins font-semibold text-white md:text-xl`}
+    >
       Get started
       <img
         className="h-auto w-8 md:w-10"
@@ -25,6 +33,9 @@ const HeroText = () => {
   const headRef = useRef(null);
   const isHeadInView = useInView(headRef);
 
+  const paragraphRef = useRef(null);
+  const isParagraphInView = useInView(paragraphRef);
+
   return (
     <div
       ref={ref}
@@ -40,11 +51,7 @@ const HeroText = () => {
           ref={headRef}
           type="h1"
           widths={["w-full"]}
-          animate={`${
-            isHeadInView
-              ? "translate-y-0 opacity-100 transition-all duration-700 ease-in-out"
-              : "translate-y-20 opacity-0"
-          }`}
+          animate={`${isHeadInView ? "slide-in-y" : "slide-out-y"}`}
           text="Improve your skills by study with coding"
         />
         <img
@@ -53,8 +60,13 @@ const HeroText = () => {
           alt="line"
         />
         <Paragraph
-          isPrimary={true}
-          sizes={["text-base", "md:text-lg"]}
+          ref={paragraphRef}
+          font={{
+            family: "source",
+          }}
+          animate={`${
+            isParagraphInView ? "slide-in-y delay-200" : "slide-out-y"
+          }`}
           widths={["w-full", "md:w-8/12", "lg:w-10/12"]}
           text="Create, launch, and iterate on new marketing campaigns without distracting your product team."
         />

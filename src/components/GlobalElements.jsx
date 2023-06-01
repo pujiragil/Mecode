@@ -71,6 +71,7 @@ export const Paragraph = forwardRef(
     {
       text,
       widths = "",
+      animate = "",
       font: {
         family = "poppins",
         size = "base",
@@ -82,7 +83,7 @@ export const Paragraph = forwardRef(
   ) => {
     const className = `${FONT_FAMILIES[family]} ${FONT_SIZES[size]} ${
       FONT_COLORS[color]
-    } ${FONT_WEIGHTS[weight]} ${widths.length && widths.join(" ")}`;
+    } ${FONT_WEIGHTS[weight]} ${widths.length && widths.join(" ")} ${animate} overflow-hidden`;
 
     return React.createElement("p", {
       ref,

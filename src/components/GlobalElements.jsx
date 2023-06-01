@@ -50,9 +50,9 @@ const FONT_FAMILIES = {
 };
 
 const FONT_SIZES = {
-  sm: "text-sm",
-  base: "text-base",
-  lg: "text-lg",
+  sm: "text-sm md:text-base",
+  base: "text-base md:text-lg",
+  lg: "text-lg md:text-xl",
 };
 
 const FONT_COLORS = {

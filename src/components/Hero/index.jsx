@@ -8,7 +8,7 @@ import { useRef } from "react";
 
 const HeroButton = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <button
@@ -27,25 +27,14 @@ const HeroButton = () => {
   );
 };
 const HeroText = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   const headRef = useRef(null);
-  const isHeadInView = useInView(headRef);
+  const isHeadInView = useInView(headRef, { once: true });
 
   const paragraphRef = useRef(null);
-  const isParagraphInView = useInView(paragraphRef);
+  const isParagraphInView = useInView(paragraphRef, { once: true });
 
   return (
-    <div
-      ref={ref}
-      className="space-y-6"
-      // className={`${
-      //   isInView
-      //     ? "translate-x-0 opacity-100"
-      //     : "-translate-x-[200px] opacity-0"
-      // } space-y-6 transition-all duration-700 ease-in-out`}
-    >
+    <div ref={ref} className="space-y-6">
       <div className="space-y-4">
         <Heading
           ref={headRef}

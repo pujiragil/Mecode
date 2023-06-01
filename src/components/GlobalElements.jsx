@@ -44,31 +44,53 @@ export const Heading = forwardRef(({ type, text, widths, animate }, ref) => {
   });
 });
 
-export const Paragraph = forwardRef((props, ref) => {
-  const generateFontStyle = ({ isPrimary, sizes, weights }) => {
-    let fontStyle = "";
-    fontStyle += isPrimary ? "font-source " : "font-poppins ";
-    fontStyle += sizes?.length && sizes.join(" ");
-    fontStyle += weights?.length && weights.join(" ");
-    return fontStyle;
-  };
+const FONT_FAMILIES = {
+  source: "font-source",
+  poppins: "font-poppins",
+};
 
-  const generateClassName = (props) => {
-    let fontStyle, textWidth, basedClass;
-    fontStyle = generateFontStyle(props);
-    textWidth = props?.widths?.length ? props.widths.join(" ") : null;
-    basedClass = "overflow-hidden leading-5 text-black";
-    return [fontStyle, textWidth, basedClass].join(" ");
-  };
+const FONT_SIZES = {
+  sm: "text-sm",
+  base: "text-base",
+  lg: "text-lg",
+};
 
-  const className = generateClassName(props);
+const FONT_COLORS = {
+  primary: "text-black",
+  secondary: "text-white",
+};
 
-  return React.createElement("p", {
-    ref,
-    className,
-    children: props?.text,
-  });
-});
+const FONT_WEIGHTS = {
+  xlight: "font-extralight",
+  normal: "font-normal",
+  medium: "font-medium",
+};
+
+export const Paragraph = forwardRef(
+  (
+    {
+      text,
+      widths = "",
+      font: {
+        family = "poppins",
+        size = "base",
+        color = "primary",
+        weight = "normal",
+      } = "",
+    },
+    ref
+  ) => {
+    const className = `${FONT_FAMILIES[family]} ${FONT_SIZES[size]} ${
+      FONT_COLORS[color]
+    } ${FONT_WEIGHTS[weight]} ${widths.length && widths.join(" ")}`;
+
+    return React.createElement("p", {
+      ref,
+      className,
+      children: text,
+    });
+  }
+);
 
 export const Button = ({ text, style, icon }) => {
   return (

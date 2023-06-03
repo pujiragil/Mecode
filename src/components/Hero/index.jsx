@@ -1,10 +1,10 @@
+import { useRef } from "react";
 import { useInView } from "framer-motion";
 
 import content from "../../data/content.json";
 import { Heading, Paragraph } from "../GlobalElements";
 import Layout from "../Layout";
 import Navbar from "../Navbar";
-import { useRef } from "react";
 
 const HeroButton = () => {
   const ref = useRef(null);
@@ -34,7 +34,7 @@ const HeroText = () => {
   const isParagraphInView = useInView(paragraphRef, { once: true });
 
   return (
-    <div ref={ref} className="space-y-6">
+    <div className="space-y-6">
       <div className="space-y-4">
         <Heading
           ref={headRef}

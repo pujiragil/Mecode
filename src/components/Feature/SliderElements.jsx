@@ -32,17 +32,15 @@ export const SliderWrapper = () => {
   const [paginationEl, paginationRef] = useSwiperRef();
 
   return (
-    <div
-      ref={ref}
-      style={{
-        transform: isInView ? "none" : "translateX(200px)",
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-      }}
-      className="flex w-full flex-col gap-6 overflow-hidden md:basis-full"
-    >
+    <div className="flex w-full flex-col gap-6 overflow-hidden md:basis-full">
       <Swiper
         modules={[Pagination, Autoplay]}
+        ref={ref}
+        style={{
+          transform: isInView ? "none" : "translateX(200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
         className="w-full"
         slidesPerView="auto"
         centeredSlides={true}

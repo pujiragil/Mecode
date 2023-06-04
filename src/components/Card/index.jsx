@@ -11,6 +11,7 @@ const CardPrimary = () => {
   return (
     <Layout
       bg="bg-white"
+      styles="overflow-hidden"
       padding={["px-5", "py-10", "md:px-6", "md:py-12", "lg:py-20"]}
     >
       <div className="grid place-items-center gap-20 lg:grid-cols-2">

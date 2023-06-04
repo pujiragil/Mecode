@@ -3,12 +3,21 @@ import { useRef } from "react";
 import { Heading, Paragraph } from "../GlobalElements";
 
 const CardPrimaryContent = () => {
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { amount: 0.5, once: true });
+
   return (
     <div className="space-y-8 lg:order-2">
       <div className="space-y-5">
         <Heading
+          ref={headingRef}
           type="h2"
-          widths={["w-full", "sm:w-4/5"]}
+          animate={`${
+            isHeadingInView
+              ? "translate-x-0 opacity-100"
+              : "translate-x-40 opacity-0"
+          } transition-all duration-700 ease-in-out delay-300`}
+          widths={["w-full", "sm:w-4/5", "lg:w-full"]}
           text="The language for building web pages"
         />
         <Paragraph
@@ -86,7 +95,7 @@ const CardSecondaryContent = ({ children }) => {
           isInView
             ? "translate-y-0 opacity-100"
             : "translate-y-[100px] opacity-0"
-        } transition-all delay-200 duration-500 ease-in-out`}
+        } transition-all delay-200 delay-300 duration-700 ease-in-out`}
       >
         <Heading
           type="h2"

@@ -6,28 +6,49 @@ const CardPrimaryContent = () => {
   const headingRef = useRef(null);
   const isHeadingInView = useInView(headingRef, { amount: 0.5, once: true });
 
+  const paragraphRef = useRef(null);
+  const isParagraphInView = useInView(paragraphRef, {
+    amount: 0.5,
+    once: true,
+  });
+
+  const buttonRef = useRef(null);
+  const isButtonInView = useInView(buttonRef, { amount: 0.5, once: true });
+
   return (
     <div className="space-y-8 lg:order-2">
       <div className="space-y-5">
         <Heading
           ref={headingRef}
           type="h2"
+          widths={["w-full", "sm:w-4/5", "lg:w-full"]}
           animate={`${
             isHeadingInView
               ? "translate-x-0 opacity-100"
               : "translate-x-40 opacity-0"
           } transition-all duration-700 ease-in-out delay-300`}
-          widths={["w-full", "sm:w-4/5", "lg:w-full"]}
           text="The language for building web pages"
         />
         <Paragraph
-          isPrimary={false}
+          ref={paragraphRef}
           sizes={["text-base", "md:text-lg"]}
           widths={["w-full", "sm:w-4/5", "md:w-9/12", "lg:w-10/12"]}
+          animate={`${
+            isParagraphInView
+              ? "translate-x-0 opacity-100"
+              : "translate-x-40 opacity-0"
+          } transition-all duration-700 ease-in-out delay-[400ms]`}
           text="Go live on a fast, reliable, and hassle-free hosting network that scales with your business with one click and go code!"
         />
       </div>
-      <button className="flex items-center gap-3 rounded bg-black px-6 py-3 font-poppins font-semibold text-white md:text-xl">
+      <button
+        ref={buttonRef}
+        className={`${
+          isButtonInView
+            ? "translate-x-0 opacity-100"
+            : "translate-x-40 opacity-0"
+        } flex items-center gap-3 rounded bg-black px-6 py-3 font-poppins font-semibold text-white transition-all delay-500 duration-700 ease-in-out md:text-xl`}
+      >
         Try it Yourself
         <img
           className="h-auto w-8 md:w-10"
